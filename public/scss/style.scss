@@ -1,0 +1,23 @@
+@use './variables';
+@use './components';
+
+/*
+----------------------------------
+RESET DEFAULT SETTINGS
+----------------------------------
+*/
+
+@font-face {
+    font-family: Roboto;
+    src: url('../font/roboto/Roboto-Regular.ttf'), url('../font/roboto/Roboto-Light.ttf');
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: Roboto;
+}

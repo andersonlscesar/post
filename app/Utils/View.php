@@ -3,6 +3,12 @@ namespace App\Utils;
 
 class View
 {
+    private static array $default = [];
+
+    public static function setDefaultMVCVariables(array $default): void 
+    {
+        self::$default = $default;
+    }
     /**
      * Pega o conteúdo da view
      * @param string $view
@@ -24,11 +30,12 @@ class View
 
     public static function render(string $view, array $params = [])
     {
-        $content = self::getContentView($view);
+        $content = self::getContentView($view);     
+        $params = array_merge($params, self::$default);
         $keys = array_keys($params);
         $keys = array_map(fn($item) => '{{'.$item.'}}', $keys); 
-        $finalContent =  preg_replace(['({{.*?}})'], $keys, $content);
-        return str_replace($keys, array_values($params), $finalContent);
+     
+        return str_replace($keys, array_values($params), $content);
     }
 
 }

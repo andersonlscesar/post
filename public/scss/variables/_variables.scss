@@ -1,0 +1,11 @@
+$primary-color:     #1E1F23;
+$secondary-color:   #12141C;
+$text-color:        #C0CDFA;
+$comment-area-color:#383E56;
+$input-color:       #020510;
+$links-color:       #478DC9;
+$shadow-light-color:#478DC9;
+
+@mixin linear-gradient {
+    background-image: linear-gradient(to right, #0A396C , #3689D2 50%, #478DC9);
+}

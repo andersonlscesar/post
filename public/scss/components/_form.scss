@@ -1,0 +1,77 @@
+@use '../variables' as var;
+
+@mixin label {
+    display: block;
+    color: var.$text-color;
+}
+
+@mixin inputStyle($padding: .9rem, $border-radius: 8px) {
+    padding: $padding;
+    outline: none;
+    font-size: .9rem;
+    background-color: var.$input-color;
+    border: transparent;
+    border-radius: $border-radius;
+    color: var.$text-color;
+}
+
+@mixin formButton($padding: .9rem, $border-radius: 8px) {
+    @include var.linear-gradient();
+    padding: $padding;
+    outline: none;
+    border: transparent;
+    border-radius: $border-radius;
+    cursor: pointer;
+    color: var.$text-color;
+}
+
+.form-flex {
+    display: flex;
+    flex-direction: column;   
+    gap: .5rem;
+}
+
+
+.form {
+    display: flex;
+    flex-direction: column;  
+    justify-content: center;
+    background-color: var.$primary-color;
+    padding: 1rem;
+    border-radius: 10px;
+    min-height: 250px;
+    box-shadow: 2px 2px 25px rgba($color: var.$shadow-light-color, $alpha: .5);
+
+    label {
+        @include label;
+    }
+}
+
+.form__input {
+    @include inputStyle();
+}
+
+.form__input::placeholder {
+    color: var.$text-color;
+}
+
+.form__button {
+    @include formButton();
+}
+
+.form__title {
+    color: var.$text-color;
+    margin-bottom: 1rem;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0%;
+        height: 1px;
+        width: 70%;
+        background-color: var.$text-color;
+    }
+}

@@ -1,0 +1,124 @@
+.form-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #1E1F23;
+  padding: 1rem;
+  border-radius: 10px;
+  min-height: 250px;
+  box-shadow: 2px 2px 25px rgba(71, 141, 201, 0.5);
+}
+.form label {
+  display: block;
+  color: #C0CDFA;
+}
+
+.form__input {
+  padding: 0.9rem;
+  outline: none;
+  font-size: 0.9rem;
+  background-color: #020510;
+  border: transparent;
+  border-radius: 8px;
+  color: #C0CDFA;
+}
+
+.form__input::placeholder {
+  color: #C0CDFA;
+}
+
+.form__button {
+  background-image: linear-gradient(to right, #0A396C, #3689D2 50%, #478DC9);
+  padding: 0.9rem;
+  outline: none;
+  border: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #C0CDFA;
+}
+
+.form__title {
+  color: #C0CDFA;
+  margin-bottom: 1rem;
+  position: relative;
+}
+.form__title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0%;
+  height: 1px;
+  width: 70%;
+  background-color: #C0CDFA;
+}
+
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: 2;
+}
+
+#cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  z-index: 4;
+}
+
+#login-cad-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*
+=========================================
+General components
+=========================================
+*/
+/*
+=========================================
+These files concerning login's components
+=========================================
+*/
+/*
+----------------------------------
+RESET DEFAULT SETTINGS
+----------------------------------
+*/
+@font-face {
+  font-family: Roboto;
+  src: url("../font/roboto/Roboto-Regular.ttf"), url("../font/roboto/Roboto-Light.ttf");
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: Roboto;
+}
+
+/*# sourceMappingURL=style.css.map */

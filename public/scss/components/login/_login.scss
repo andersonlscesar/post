@@ -1,0 +1,32 @@
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 2;
+}
+
+#cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0, .5);
+    height: 100%;
+    width: 100%;
+    z-index: 4;
+}
+
+
+#login-cad-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
