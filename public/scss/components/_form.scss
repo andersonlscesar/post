@@ -33,6 +33,7 @@
 
 
 .form {
+    position: absolute;
     display: flex;
     flex-direction: column;  
     justify-content: center;
@@ -72,7 +73,7 @@
         transform: translateY(-50%);
         right: 0%;
         height: 1px;
-        width: 70%;
+        width: 50%;
         background-color: var.$text-color;
     }
 }
@@ -82,6 +83,7 @@
     display: flex;
     gap: 1rem;
     position: relative;
+    justify-content: space-between;
 
     &::after {
         content: "";

@@ -1,8 +1,9 @@
 <section id="login-cad-section">
     <!-- Login Form -->
-    <div class="form">
+
+    <div class="form section-login-form" >
         <h1 class="form__title">Login</h1>
-        <form method="POST" class="form-flex">
+        <form method="POST" class="form-flex" id="login-form">
             <label for="usuario-email">Usuário / E-mail</label>
             <input type="text" name="usuario" id="usuario-email" class="form__input" placeholder="username / email@email.com ...">
 
@@ -13,7 +14,38 @@
         <!-- area de cadastro -->
         <div class="options">
             <span class="options__message">Ainda não possui uma conta?</span>
-            <a href="#" class="options__link">Cadastre-se aqui</a>
+            <a href="#" class="options__link" data-js="cad--link">Cadastre-se aqui</a>
         </div>
     </div>
+
+    <div class="form section-cad-form">
+        <h1 class="form__title">Cadastre-se</h1>
+        <form method="POST" class="form-flex" id="cad-form">
+
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" class="form__input" placeholder="Lula ladrão ...">
+
+            <label for="cad-usuario">Nome de usuário</label>
+            <input type="text" name="usuario" id="cad-usuario" class="form__input" placeholder="emendas.do.relator ...">
+
+            <label for="cad-email">E-mail</label>
+            <input type="text" name="email" id="cad-email" class="form__input" placeholder="cpx@gmail.com ...">
+
+
+            <label for="cad-senha">Senha</label>
+            <input type="password" name="senha" id="cad-senha" class="form__input" placeholder="******">
+
+            <label for="confirmar-senha">Confirmar senha</label>
+            <input type="password" name="confirmar-senha" id="confirmar-senha" class="form__input" placeholder="******">
+
+            <button type="submit" class="form__button">Cadastrar</button>
+        </form>
+        <!-- area de cadastro -->
+        <div class="options">
+            <span class="options__message">Já possui uma conta?</span>
+            <a href="#" class="options__link">Acesse aqui</a>
+        </div>
+    </div>
+
+
 </section>
