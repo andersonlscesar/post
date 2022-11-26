@@ -72,15 +72,29 @@ LOGIN AND CAD FORM'S ANIMATIONS
     }
 }
 
-.cad--show {
-    animation-name: form-cad-show;
-    animation-duration: .5s;
-    animation-delay: 200ms;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-    pointer-events: all;
+
+.animation {
+   
+    animation-fill-mode: both;
 }
 
+.cad--show {
+    animation-name: form-cad-show;
+    animation-duration: 2s;
+    animation-delay: 200ms;
+    animation-timing-function: ease-in-out;
+    pointer-events: all;
+    animation-fill-mode: forwards;
+
+}
+
+.cad--hide {
+    animation-name: form-cad-hide;
+    animation-duration: 2s;
+    animation-delay: 200ms;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: backwards;
+}
 
 
 @keyframes form-cad-show {
@@ -98,5 +112,25 @@ LOGIN AND CAD FORM'S ANIMATIONS
     100% {
         transform: translateX(0%);
         opacity: 1;
+    }
+}
+
+
+
+@keyframes form-cad-hide {
+    50% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+
+    75% {
+        opacity: .5;
+        transform: translateX(-30%);
+
+    }
+
+    100% {
+        transform: translateX(200%);
+        opacity: 0;
     }
 }
