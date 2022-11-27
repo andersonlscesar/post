@@ -1,6 +1,6 @@
-import { Animation } from "./Animation.js"
+import { AnimationForm } from "./Animation.js"
 
-export class FormSwitch extends Animation {
+export class FormSwitch extends AnimationForm {
     initialElement: HTMLElement | null
     secondElement: HTMLElement | null
 
@@ -27,8 +27,8 @@ export class FormSwitch extends Animation {
             // Adicionando evento ao elemento
             this.initialElement.addEventListener('click', (e) => {
                 e.preventDefault()
-                loginForm.classList.add('login--hide')
-                cadForm.classList.add('cad--show')
+                this.addElement(loginForm).animateToLeftDirection()
+                this.addElement(cadForm).animateFromRightDirection()
             })
         }
     }
@@ -45,13 +45,8 @@ export class FormSwitch extends Animation {
 
             this.secondElement.addEventListener('click', (e) => {
                 e.preventDefault()
-                cadForm.style.opacity = '1'
-                cadForm.classList.add('cad--hide')
-
-                cadForm.addEventListener('animationend', () => {
-                    cadForm.style.opacity = '0'
-                    cadForm.style.pointerEvents = 'none'
-                })
+                this.addElement(cadForm).animateToRightDirection()
+                this.addElement(loginForm).animateFromLeftDirection()
                 
                 // cadForm.style.animationDirection = 'reverse'
 

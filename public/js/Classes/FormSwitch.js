@@ -1,5 +1,5 @@
-import { Animation } from "./Animation.js";
-export class FormSwitch extends Animation {
+import { AnimationForm } from "./Animation.js";
+export class FormSwitch extends AnimationForm {
     constructor() {
         super();
         this.initialElement = document.querySelector('a[data-js="cad--link"]');
@@ -18,8 +18,8 @@ export class FormSwitch extends Animation {
             // Adicionando evento ao elemento
             this.initialElement.addEventListener('click', (e) => {
                 e.preventDefault();
-                loginForm.classList.add('login--hide');
-                cadForm.classList.add('cad--show');
+                this.addElement(loginForm).animateToLeftDirection();
+                this.addElement(cadForm).animateFromRightDirection();
             });
         }
     }
@@ -33,12 +33,8 @@ export class FormSwitch extends Animation {
             const cadForm = document.querySelector('.section-cad-form');
             this.secondElement.addEventListener('click', (e) => {
                 e.preventDefault();
-                cadForm.style.opacity = '1';
-                cadForm.classList.add('cad--hide');
-                cadForm.addEventListener('animationend', () => {
-                    cadForm.style.opacity = '0';
-                    cadForm.style.pointerEvents = 'none';
-                });
+                this.addElement(cadForm).animateToRightDirection();
+                this.addElement(loginForm).animateFromLeftDirection();
                 // cadForm.style.animationDirection = 'reverse'
             });
         }
