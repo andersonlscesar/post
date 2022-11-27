@@ -16,15 +16,21 @@ export class Form {
         this.options = options
     }
 
-    isEmpty(input: HTMLInputElement) {
+    isEmpty(input: HTMLInputElement): boolean {
         this.form.addEventListener('submit', (e) => {
             // Impedindo o form de fazer o submit
-            e.preventDefault()            
             let inputValue = input.value
-            console.log(inputValue)
+            if(inputValue.trim() === '' || inputValue === null) {
+                e.preventDefault()            
+                return false
+            }
         })
+        return true
     }
 
-
+    setMessage(message: string): void {
+        this.message = message
+        console.log(this.message)
+    }
 
 }

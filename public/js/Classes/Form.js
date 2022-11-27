@@ -6,9 +6,16 @@ export class Form {
     isEmpty(input) {
         this.form.addEventListener('submit', (e) => {
             // Impedindo o form de fazer o submit
-            e.preventDefault();
             let inputValue = input.value;
-            console.log(inputValue);
+            if (inputValue.trim() === '' || inputValue === null) {
+                e.preventDefault();
+                return false;
+            }
         });
+        return true;
+    }
+    setMessage(message) {
+        this.message = message;
+        console.log(this.message);
     }
 }
