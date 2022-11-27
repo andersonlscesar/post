@@ -74,6 +74,8 @@ export class AnimationForm {
 
      animateToLeftDirection() {
         this.element.animate(this.leftDirectionKeyframe, this.options)
+        this.element.style.pointerEvents = 'none'
+
     }
 
     animateFromRightDirection() {
