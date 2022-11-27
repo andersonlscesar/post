@@ -126,7 +126,6 @@
 }
 
 .section-cad-form {
-  transform: translateX(200%);
   opacity: 0;
   pointer-events: none;
 }
@@ -163,7 +162,7 @@ LOGIN AND CAD FORM'S ANIMATIONS
 
 .cad--show {
   animation-name: form-cad-show;
-  animation-duration: 2s;
+  animation-duration: 0.5s;
   animation-delay: 200ms;
   animation-timing-function: ease-in-out;
   pointer-events: all;
@@ -172,7 +171,7 @@ LOGIN AND CAD FORM'S ANIMATIONS
 
 .cad--hide {
   animation-name: form-cad-hide;
-  animation-duration: 2s;
+  animation-duration: 0.5s;
   animation-delay: 200ms;
   animation-timing-function: ease-in-out;
   animation-fill-mode: backwards;
