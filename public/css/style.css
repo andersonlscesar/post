@@ -98,6 +98,7 @@
 }
 
 .error-message {
+  transition: all 0.3s ease-in-out;
   background-color: #d25536;
   position: fixed;
   top: 1.5rem;

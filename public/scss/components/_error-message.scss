@@ -9,6 +9,7 @@
 }
 
 .error-message {
+    transition: all .3s ease-in-out;
     background-color: var.$error-message-background;
     position: fixed;
     top: 1.5rem;
