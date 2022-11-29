@@ -7,30 +7,32 @@ interface Options {
 
 export class Form {
 
-    private form: HTMLFormElement
     private message!: string
     options?: Options
 
-    constructor( form: HTMLFormElement, options?: Options) {
-        this.form = form
+    constructor(public location:HTMLElement, options?: Options) {
         this.options = options
+        this.location = location
     }
 
-    isEmpty(input: HTMLInputElement): boolean {
-        this.form.addEventListener('submit', (e) => {
-            // Impedindo o form de fazer o submit
-            let inputValue = input.value
-            if(inputValue.trim() === '' || inputValue === null) {
-                e.preventDefault()            
-                return false
-            }
-        })
+     isEmpty(input: HTMLInputElement): boolean {
+        if(input.value.trim() === '' || input.value === null) {           
+            return false
+        }
         return true
     }
 
-    setMessage(message: string): void {
+     getErrorMessage(message: string): void {
         this.message = message
-        console.log(this.message)
+        const errorMessageDiv = document.createElement('div')
+        errorMessageDiv.classList.add('error-message')
+        const errorMessageInfo = document.createElement('span')
+        errorMessageInfo.classList.add('error-message__info')
+        errorMessageInfo.innerText = this.message
+        errorMessageDiv.appendChild( errorMessageInfo )
+        this.location.appendChild( errorMessageDiv )        
     }
+
+
 
 }

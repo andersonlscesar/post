@@ -1,21 +1,23 @@
 export class Form {
-    constructor(form, options) {
-        this.form = form;
+    constructor(location, options) {
+        this.location = location;
         this.options = options;
+        this.location = location;
     }
     isEmpty(input) {
-        this.form.addEventListener('submit', (e) => {
-            // Impedindo o form de fazer o submit
-            let inputValue = input.value;
-            if (inputValue.trim() === '' || inputValue === null) {
-                e.preventDefault();
-                return false;
-            }
-        });
+        if (input.value.trim() === '' || input.value === null) {
+            return false;
+        }
         return true;
     }
-    setMessage(message) {
+    getErrorMessage(message) {
         this.message = message;
-        console.log(this.message);
+        const errorMessageDiv = document.createElement('div');
+        errorMessageDiv.classList.add('error-message');
+        const errorMessageInfo = document.createElement('span');
+        errorMessageInfo.classList.add('error-message__info');
+        errorMessageInfo.innerText = this.message;
+        errorMessageDiv.appendChild(errorMessageInfo);
+        this.location.appendChild(errorMessageDiv);
     }
 }

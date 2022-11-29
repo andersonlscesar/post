@@ -89,6 +89,38 @@
   color: #478DC9;
 }
 
+.login--hide {
+  animation-name: form-login-hide;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  pointer-events: none;
+}
+
+.error-message {
+  background-color: #d25536;
+  position: fixed;
+  top: 1.5rem;
+  right: 1rem;
+  padding: 1rem;
+  border-radius: 5px;
+  color: #eed5cf;
+  box-shadow: 0px 0px 20px 4px #d56043;
+  z-index: 12;
+}
+.error-message::after {
+  content: "";
+  position: absolute;
+  bottom: -0.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 0;
+  width: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #d25536;
+}
+
 #background-video {
   position: fixed;
   top: 0;
@@ -135,76 +167,6 @@
 LOGIN AND CAD FORM'S ANIMATIONS
 -------------------------------------------------------
 */
-.login--hide {
-  animation-name: form-login-hide;
-  animation-duration: 0.5s;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
-  pointer-events: none;
-}
-
-@keyframes form-login-hide {
-  50% {
-    transform: translateX(40%);
-    opacity: 0.9;
-  }
-  75% {
-    opacity: 0.5;
-  }
-  100% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-}
-.animation {
-  animation-fill-mode: both;
-}
-
-.cad--show {
-  animation-name: form-cad-show;
-  animation-duration: 0.5s;
-  animation-delay: 200ms;
-  animation-timing-function: ease-in-out;
-  pointer-events: all;
-  animation-fill-mode: forwards;
-}
-
-.cad--hide {
-  animation-name: form-cad-hide;
-  animation-duration: 0.5s;
-  animation-delay: 200ms;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: backwards;
-}
-
-@keyframes form-cad-show {
-  50% {
-    transform: translateX(200%);
-    opacity: 0;
-  }
-  75% {
-    opacity: 0.5;
-    transform: translateX(-30%);
-  }
-  100% {
-    transform: translateX(0%);
-    opacity: 1;
-  }
-}
-@keyframes form-cad-hide {
-  50% {
-    transform: translateX(0%);
-    opacity: 1;
-  }
-  75% {
-    opacity: 0.5;
-    transform: translateX(-30%);
-  }
-  100% {
-    transform: translateX(200%);
-    opacity: 0;
-  }
-}
 /*
 =========================================
 General components
