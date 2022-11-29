@@ -40,3 +40,4 @@ export class FormSwitch extends AnimationForm {
         }
     }
 }
+//# sourceMappingURL=FormSwitch.js.map

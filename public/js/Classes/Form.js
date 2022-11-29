@@ -24,25 +24,31 @@ export class Form {
      */
     getErrorMessage(message) {
         if (!this.form.hasAttribute('data-alert')) {
+            let input = this.inputElement;
             this.form.setAttribute('data-alert', '');
             this.message = message;
             const errorMessageDiv = document.createElement('div');
-            errorMessageDiv.innerHTML = '';
             errorMessageDiv.classList.add('error-message');
             const errorMessageInfo = document.createElement('span');
             errorMessageInfo.classList.add('error-message__info');
             errorMessageInfo.innerText = this.message;
             errorMessageDiv.appendChild(errorMessageInfo);
-            errorMessageDiv.style.opacity = 'none';
             this.location.appendChild(errorMessageDiv);
-            this.inputElement.style.boxShadow = '0px 0px 2px 2px #d25536';
-            setTimeout(() => {
+            input.style.boxShadow = '0px 0px 2px 2px #d25536';
+            //Remove o aviso após alguns segundos
+            const myInterval = setTimeout(() => {
                 errorMessageDiv.remove();
-                this.inputElement.style.boxShadow = 'none';
+                input.style.boxShadow = 'none';
                 this.form.removeAttribute('data-alert');
             }, 6000);
+            this.whereTyping(errorMessageDiv, myInterval); // Verifica quando o usuário estiver digitando                
         }
     }
+    /**
+     * Verifica um determinado grupo de caracteres
+     * @param input
+     * @returns { boolean }
+     */
     whereAplhanumeric(input) {
         this.inputElement = input;
         const alphanumeric = /^[a-zA-Z0-9\@]*$/;
@@ -52,4 +58,19 @@ export class Form {
         }
         return true;
     }
+    /**
+     * Esta função removerá qualquer aviso caso o usuário começe a digitar nos inputs
+     */
+    whereTyping(element, myInterval) {
+        if (element) {
+            this.form.addEventListener('keyup', (e) => {
+                clearInterval(myInterval);
+                let input = e.target;
+                input.style.boxShadow = 'none';
+                element.remove();
+                this.form.removeAttribute('data-alert');
+            });
+        }
+    }
 }
+//# sourceMappingURL=Form.js.map
