@@ -1,10 +1,17 @@
 export class Form {
-    constructor(location, form, options) {
-        this.location = location;
+    constructor(form, location, options) {
         this.form = form;
+        this.location = location;
         this.options = options;
         this.location = location;
         this.form = form;
+    }
+    /**
+     * Método responsavel por definir um input, caso seja preciso definir fora da classe
+     * @param { HTMLInputElement } input      *
+     */
+    set setInputElement(input) {
+        this.inputElement = input;
     }
     /**
      * Verifica se existe valor no input
@@ -23,6 +30,7 @@ export class Form {
      * @param message
      */
     getErrorMessage(message) {
+        var _a;
         if (!this.form.hasAttribute('data-alert')) {
             let input = this.inputElement;
             this.form.setAttribute('data-alert', '');
@@ -33,7 +41,7 @@ export class Form {
             errorMessageInfo.classList.add('error-message__info');
             errorMessageInfo.innerText = this.message;
             errorMessageDiv.appendChild(errorMessageInfo);
-            this.location.appendChild(errorMessageDiv);
+            (_a = this.location) === null || _a === void 0 ? void 0 : _a.appendChild(errorMessageDiv);
             input.style.boxShadow = '0px 0px 2px 2px #d25536';
             //Remove o aviso após alguns segundos
             const myInterval = setTimeout(() => {
@@ -80,6 +88,12 @@ export class Form {
         var _a;
         if (document.querySelector('.error-message')) {
             (_a = document.querySelector('.error-message')) === null || _a === void 0 ? void 0 : _a.remove();
+            for (let i = 0; i < this.form.children.length; i++) {
+                if (this.form.children[i].nodeName === 'INPUT') {
+                    let input = this.form.children[i];
+                    input.style.boxShadow = 'none';
+                }
+            }
         }
     }
 }

@@ -3,7 +3,7 @@ export function loginValidateForm() {
     const loginForm = document.querySelector('#login-form');
     if (loginForm) {
         const location = document.querySelector('#body-login');
-        const form = new Form(location, loginForm);
+        const form = new Form(loginForm, location);
         loginForm.addEventListener('submit', (e) => {
             // Verificando se os campos estão vazios
             if (!form.isEmpty(loginForm.usuario)) {
@@ -23,12 +23,13 @@ export function loginValidateForm() {
     }
 }
 export function cadValidateForm() {
+    var _a;
     const cadForm = document.querySelector('#cad-form');
     if (cadForm) {
         const location = document.querySelector('#body-login');
-        const form = new Form(location, cadForm);
+        const form = new Form(cadForm, location);
+        (_a = cadForm.parentElement) === null || _a === void 0 ? void 0 : _a.addEventListener('animationend', () => { form.removeErrorMessage(); });
         cadForm.addEventListener('submit', (e) => {
-            form.removeErrorMessage();
             if (!form.isEmpty(cadForm.nome)) {
                 e.preventDefault();
                 form.getErrorMessage('Informe o nome');
@@ -48,6 +49,11 @@ export function cadValidateForm() {
             else if (!form.isEmpty(cadForm.confirmar_senha)) {
                 e.preventDefault();
                 form.getErrorMessage('Confirme a senha');
+            }
+            else if (cadForm.senha.value !== cadForm.confirmar_senha.value) {
+                e.preventDefault();
+                form.setInputElement = cadForm.confirmar_senha;
+                form.getErrorMessage('As senhas estão divergentes');
             }
         });
     }

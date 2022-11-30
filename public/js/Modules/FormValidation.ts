@@ -5,12 +5,12 @@ export function loginValidateForm() {
     const loginForm = <HTMLFormElement> document.querySelector('#login-form')  
     if(loginForm) {
         const location = <HTMLElement> document.querySelector('#body-login')
-        const form = new Form(location, loginForm)
+        const form = new Form(loginForm, location )
         
         loginForm.addEventListener('submit', (e) => {
-    
             // Verificando se os campos estão vazios
-    
+         
+            
             if(!form.isEmpty(loginForm.usuario)) {
                 e.preventDefault()
                 form.getErrorMessage('Informe o usuário')
@@ -36,9 +36,12 @@ export function cadValidateForm() {
 
     if(cadForm) {
         const location = <HTMLElement> document.querySelector('#body-login')
-        const form = new Form(location, cadForm)
+        const form = new Form(cadForm, location)
+
+        cadForm.parentElement?.addEventListener('animationend', () => { form.removeErrorMessage() })
+
         cadForm.addEventListener('submit', (e) => {
-            form.removeErrorMessage()
+        
             if(!form.isEmpty(cadForm.nome)) {
                 e.preventDefault()
                 form.getErrorMessage('Informe o nome')
@@ -54,6 +57,10 @@ export function cadValidateForm() {
             } else if(!form.isEmpty(cadForm.confirmar_senha)) {
                 e.preventDefault()
                 form.getErrorMessage('Confirme a senha')
+            } else if(cadForm.senha.value !== cadForm.confirmar_senha.value) {
+                e.preventDefault()
+                form.setInputElement = cadForm.confirmar_senha 
+                form.getErrorMessage('As senhas estão divergentes')
             }
         })
     }

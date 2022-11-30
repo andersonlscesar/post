@@ -9,10 +9,19 @@ export class Form {
     options?: Options
     private inputElement!: HTMLInputElement
 
-    constructor(public location:HTMLElement, public form: HTMLFormElement, options?: Options) {
+    constructor(public form: HTMLFormElement, public location?:HTMLElement, options?: Options) {
         this.options = options
         this.location = location
         this.form = form
+    }
+
+    /**
+     * Método responsavel por definir um input, caso seja preciso definir fora da classe
+     * @param { HTMLInputElement } input      * 
+     */
+
+    set setInputElement(input: HTMLInputElement) {
+        this.inputElement = input
     }
 
     /**
@@ -47,7 +56,7 @@ export class Form {
             errorMessageInfo.classList.add('error-message__info')
             errorMessageInfo.innerText = this.message
             errorMessageDiv.appendChild( errorMessageInfo )
-            this.location.appendChild( errorMessageDiv )     
+            this.location?.appendChild( errorMessageDiv )     
             input.style.boxShadow = '0px 0px 2px 2px #d25536'
             //Remove o aviso após alguns segundos
             const myInterval = setTimeout(() => {
@@ -57,6 +66,8 @@ export class Form {
               }, 6000)        
                this.whereTyping(errorMessageDiv, myInterval) // Verifica quando o usuário estiver digitando                
             }
+
+
     }
 
     /**
@@ -98,6 +109,13 @@ export class Form {
     removeErrorMessage(): void {
         if(document.querySelector('.error-message')) {
             document.querySelector('.error-message')?.remove()
+            for(let i = 0; i < this.form.children.length; i++) {
+                if(this.form.children[i].nodeName === 'INPUT') {
+                    let input = <HTMLElement> this.form.children[i]
+                    input.style.boxShadow = 'none'                  
+                }
+            }
+           
         }
     }
 
