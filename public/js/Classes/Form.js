@@ -72,5 +72,15 @@ export class Form {
             });
         }
     }
+    /**
+     * Caso seja necessário remover uma mensagem no momento de validação em outro form
+     *
+     */
+    removeErrorMessage() {
+        var _a;
+        if (document.querySelector('.error-message')) {
+            (_a = document.querySelector('.error-message')) === null || _a === void 0 ? void 0 : _a.remove();
+        }
+    }
 }
 //# sourceMappingURL=Form.js.map

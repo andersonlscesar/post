@@ -1,5 +1,6 @@
 import { FormSwitch } from './Classes/FormSwitch.js';
-import { loginValidateForm } from './Modules/LoginValidateForm.js';
+import { loginValidateForm, cadValidateForm } from './Modules/FormValidation.js';
 new FormSwitch();
 loginValidateForm();
+cadValidateForm();
 //# sourceMappingURL=main.js.map

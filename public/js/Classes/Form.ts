@@ -33,6 +33,7 @@ export class Form {
      * Cria através do DOM elementos HTML e os insere e depois de alguns segundos, os remove
      * @param message  
      */
+    
 
      getErrorMessage(message: string): void {
          
@@ -87,6 +88,16 @@ export class Form {
                 element.remove()
                 this.form.removeAttribute('data-alert')
             })
+        }
+    }
+
+    /**
+     * Caso seja necessário remover uma mensagem no momento de validação em outro form
+     * 
+     */
+    removeErrorMessage(): void {
+        if(document.querySelector('.error-message')) {
+            document.querySelector('.error-message')?.remove()
         }
     }
 
