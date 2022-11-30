@@ -4,7 +4,7 @@ export function loginValidateForm() {
 
     const loginForm = <HTMLFormElement> document.querySelector('#login-form')  
     if(loginForm) {
-        const location = <HTMLElement> document.querySelector('#body-login')
+        const location = <HTMLElement> document.querySelector('#login-cad-section')
         const form = new Form(loginForm, location )
         
         loginForm.addEventListener('submit', (e) => {
@@ -35,7 +35,7 @@ export function cadValidateForm() {
     const cadForm = <HTMLFormElement> document.querySelector('#cad-form')
 
     if(cadForm) {
-        const location = <HTMLElement> document.querySelector('#body-login')
+        const location = <HTMLElement> document.querySelector('#login-cad-section')
         const form = new Form(cadForm, location)
 
         cadForm.parentElement?.addEventListener('animationend', () => { form.removeErrorMessage() })

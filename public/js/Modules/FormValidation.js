@@ -2,7 +2,7 @@ import { Form } from "../Classes/Form.js";
 export function loginValidateForm() {
     const loginForm = document.querySelector('#login-form');
     if (loginForm) {
-        const location = document.querySelector('#body-login');
+        const location = document.querySelector('#login-cad-section');
         const form = new Form(loginForm, location);
         loginForm.addEventListener('submit', (e) => {
             // Verificando se os campos estão vazios
@@ -26,7 +26,7 @@ export function cadValidateForm() {
     var _a;
     const cadForm = document.querySelector('#cad-form');
     if (cadForm) {
-        const location = document.querySelector('#body-login');
+        const location = document.querySelector('#login-cad-section');
         const form = new Form(cadForm, location);
         (_a = cadForm.parentElement) === null || _a === void 0 ? void 0 : _a.addEventListener('animationend', () => { form.removeErrorMessage(); });
         cadForm.addEventListener('submit', (e) => {
