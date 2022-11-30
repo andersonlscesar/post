@@ -5,6 +5,8 @@ use App\Controller\Pages\Login;
 use App\Common\Environment;
 use App\Utils\View;
 
+
+
 Environment::laod(__DIR__.'/.env');
 
 View::setDefaultMVCVariables([

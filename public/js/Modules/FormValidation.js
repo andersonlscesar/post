@@ -55,6 +55,19 @@ export function cadValidateForm() {
                 form.setInputElement = cadForm.confirmar_senha;
                 form.getErrorMessage('As senhas estão divergentes');
             }
+            // Validando caracteres
+            if (!form.whereAplhanumeric(cadForm.nome)) {
+                e.preventDefault();
+                form.getErrorMessage('Nome inválido');
+            }
+            else if (!form.whereAplhanumeric(cadForm.usuario)) {
+                e.preventDefault();
+                form.getErrorMessage('Usuário inválido');
+            }
+            else if (!form.whereAplhanumeric(cadForm.email)) {
+                e.preventDefault();
+                form.getErrorMessage('E-mail inválido');
+            }
         });
     }
 }
