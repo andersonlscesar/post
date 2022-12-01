@@ -1,5 +1,6 @@
 <main class="feed-grid">
     <!-- Informações sobre o perfil -->
+
     <div class="profile-information">
         <div class="profile__bg"></div>
         <img src="{{URL}}/public/img/p.jpg" alt="Profile image" class="profile__image">
@@ -8,10 +9,38 @@
         <a href="#" class="options__link">Sair</a>
     </div>
 
-    <!-- Form para realizar publicação -->
-    <div class="publish">
-        <input type="text" class="form__input" placeholder="Pubique algo ...">
+    <!-- ***************************************** TODAS AS POSTAGENS *************************************************** -->
+
+    <div class="recente-publishes">
+
+        <!-- Form para realizar publicação -->    
+        <div class="publish">
+            <input type="text" class="form__input" placeholder="Pubique algo ...">
+        </div>
+        <!-- ************************************************************************** -->
+
+        <h2 class="recente-publishes__title">Postagens recentes</h2>
+        <!-- Postagens dos usuários -->
+        <div class="poster-area">
+            
+            <div class="poster-area__header">
+                <img src="{{URL}}/public/img/p.jpg" alt="" class="poster-area__header-photo">
+                <div class="poster-arear__header-user-information">
+                    <h3>users'name</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                </div>
+                <small class="poster-area__header-data">01/12/2022</small>
+            </div>
+
+            <div class="poster-area__body">
+                <p class="poster-area__body-text">Segundo o IBGE, historicamente é na faixa entre mais de 1 mês e menos de 1 ano que se concentra a maior parcela dos desempregados no país. No segundo trimestre de 2020, auge da crise provocada pela pandemia, os desempregados nesta faixa representavam 58,3% do total, proporção recorde de toda a série histórica da pesquisa.
+                    Já a menor parcela estava na fila há mais de 1 ano, mas há menos de 2 anos, seguida pelos que buscavam nova vaga há menos de 1 mês.
+                    Enquanto houve uma pequena queda de um trimestre para outro entre os que procuravam emprego há dois anos ou mais e de um ano a menos de dois anos, aumentou o percentual entre quem esperava por uma</p>
+            </div>
+        </div>
     </div>
+
+    <!-- ********************************************************************************************************************** -->
 
     <!-- Área de notícias -->
 
@@ -44,6 +73,8 @@
                 </article>
             </a>
         </div>
+
+
         
     </div>
 </main>

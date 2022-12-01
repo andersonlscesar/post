@@ -113,3 +113,73 @@
         padding: 4px;
     }
 }
+
+/*
+==================================
+AREA DE POSTAGENS RECENTES
+==================================
+*/
+
+.recente-publishes__title {
+    margin-top: 1rem;
+    position: relative;
+    font-size: 1.4rem;
+    font-weight: lighter;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        height: 1px;
+        width: calc(100% - 14rem);
+        background-color: var.$text-color;
+    }
+}
+
+.poster-area {
+    background-color: var.$primary-color;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.poster-area__header {   
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+}
+
+.poster-area__header-photo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.poster-arear__header-user-information {
+
+    h3 {
+        margin-bottom: .3rem;
+    }
+
+    p {
+        display: block;
+        font-size: .8rem;
+    }
+
+}
+
+.poster-area__header-data {
+    margin-left: auto;
+    margin-bottom: auto;
+}
+
+.poster-area__body 
+{
+    .poster-area__body-text {
+        padding: 1rem;
+        line-height: 25px;
+    }
+}
