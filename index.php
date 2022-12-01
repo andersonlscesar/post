@@ -1,16 +1,4 @@
 <?php
-require_once __DIR__.'/vendor/autoload.php';
-
-use App\Controller\Pages\Login;
-use App\Common\Environment;
-use App\Utils\View;
+include_once __DIR__.'/includes/config.php';
 
 
-
-Environment::laod(__DIR__.'/.env');
-
-View::setDefaultMVCVariables([
-    'URL' => getenv('URL')
-]);
-
-print Login::renderContent();

@@ -8,7 +8,7 @@ class Response
     private string $contentType;
     private array $headers = [];
 
-    public function __construct(int $httpCode, string $content, string $contentType = 'text/html')
+    public function __construct(int $httpCode, $content, string $contentType = 'text/html')
     {
         $this->httpCode = $httpCode;
         $this->content= $content;

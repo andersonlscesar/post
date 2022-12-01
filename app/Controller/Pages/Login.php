@@ -12,9 +12,7 @@ class Login extends Page
 
     public static function renderContent(): string
     {
-        $content = View::render('login/login', [
-            'teste' => 'variável mvc'
-        ]);
+        $content = View::render('login/login');
 
         return parent::renderMainLayout('Login', $content);
     }
