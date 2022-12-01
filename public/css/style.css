@@ -277,6 +277,64 @@ LOGIN AND CAD FORM'S ANIMATIONS
   border: 2px solid #C0CDFA;
 }
 
+.breaking-news {
+  padding: 1rem;
+  background-color: #1E1F23;
+  border-radius: 6px;
+  grid-column-start: last-column-start;
+  grid-row-start: row-start;
+  grid-row-end: finish;
+}
+.breaking-news .breaking-news__header {
+  display: flex;
+  align-items: center;
+  font-size: 0.6rem;
+  gap: 0.5rem;
+  background-color: #1E1F23;
+}
+.breaking-news .breaking-news__header i {
+  font-size: 1.3rem;
+}
+.breaking-news .breaking-news__header .breaking-news__title {
+  position: relative;
+}
+.breaking-news .breaking-news__header .breaking-news__title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -160%;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 1px;
+  background-color: #C0CDFA;
+}
+
+.articles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.articles__link {
+  text-decoration: none;
+  color: #C0CDFA;
+}
+
+.breaking-news__article {
+  background-color: #383E56;
+  padding: 1rem;
+  border-radius: 5px;
+}
+.breaking-news__article .article__title {
+  font-size: medium;
+}
+.breaking-news__article p {
+  font-size: small;
+  letter-spacing: 1px;
+  padding: 4px;
+}
+
 /*
 =========================================
 General components
@@ -325,7 +383,7 @@ html, body {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 2rem;
 }
@@ -338,7 +396,7 @@ GRID PARA O FEED
 .feed-grid {
   display: grid;
   grid-template-columns: [start] 230px [centre-start] 1fr [last-column-start] 270px [finish];
-  grid-template-rows: [row-start] 260px;
+  grid-template-rows: [row-start] 220px [centre-row-start] 220px [last-row-start] 220px [finish];
   gap: 1rem;
 }
 

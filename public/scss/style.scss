@@ -42,7 +42,7 @@ html, body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
     padding: 2rem;
 }
@@ -56,6 +56,6 @@ GRID PARA O FEED
 .feed-grid {
     display: grid;
     grid-template-columns: [start] 230px [centre-start] 1fr [last-column-start] 270px [finish];
-    grid-template-rows: [row-start] 260px;
+    grid-template-rows: [row-start] 220px [centre-row-start] 220px [last-row-start] 220px [finish];
     gap: 1rem;
 }
