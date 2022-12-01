@@ -82,7 +82,8 @@
   font-size: 0.8rem;
   color: #C0CDFA;
 }
-.options .options__link {
+
+.options__link {
   display: block;
   font-size: 0.8rem;
   text-decoration: none;
@@ -172,8 +173,8 @@ LOGIN AND CAD FORM'S ANIMATIONS
 #header {
   display: flex;
   height: rem;
-  background-color: red;
   height: 5rem;
+  box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.5);
 }
 
 .flex-basis {
@@ -195,6 +196,87 @@ LOGIN AND CAD FORM'S ANIMATIONS
   gap: 1rem;
 }
 
+.search-button {
+  background-color: #020510;
+  color: #C0CDFA;
+  border: transparent;
+  font-size: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+  outline: none;
+  border-radius: 0 5px 5px 0;
+  position: relative;
+}
+.search-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background-color: #C0CDFA;
+}
+
+.search-input {
+  border-radius: 5px 0 0 5px;
+  width: 100%;
+  color: #C0CDFA;
+}
+.search-input::placeholder {
+  color: #C0CDFA;
+}
+
+#search-form {
+  display: flex;
+  flex-basis: 100%;
+}
+
+.publish {
+  background-color: #1E1F23;
+  padding: 1rem;
+  border-radius: 6px;
+  max-height: 80px;
+}
+.publish input {
+  width: 100%;
+}
+
+.profile-information {
+  background-color: #1E1F23;
+  padding: 1rem;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.8rem;
+  position: relative;
+}
+
+.profile__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background-image: url("../img/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 1rem;
+  border-radius: 5px 5px 0 0;
+}
+
+.profile__image {
+  display: block;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  border: 2px solid #C0CDFA;
+}
+
 /*
 =========================================
 General components
@@ -204,11 +286,6 @@ General components
 =========================================
 These files concerning login's components
 =========================================
-*/
-/*
-----------------------------------
-RESET DEFAULT SETTINGS
-----------------------------------
 */
 @font-face {
   font-family: Concrete;
@@ -222,6 +299,11 @@ RESET DEFAULT SETTINGS
   font-family: Roboto;
   src: url("../font/roboto/Roboto-Regular.ttf"), url("../font/roboto/Roboto-Light.ttf");
 }
+/*
+----------------------------------
+RESET DEFAULT SETTINGS
+----------------------------------
+*/
 * {
   padding: 0;
   margin: 0;
@@ -246,6 +328,18 @@ html, body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+}
+
+/*
+----------------------------------
+GRID PARA O FEED
+----------------------------------
+*/
+.feed-grid {
+  display: grid;
+  grid-template-columns: [start] 230px [centre-start] 1fr [last-column-start] 270px [finish];
+  grid-template-rows: [row-start] 260px;
+  gap: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

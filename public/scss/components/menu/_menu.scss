@@ -4,8 +4,8 @@
 #header {    
     display: flex;
     height: rem;
-    background-color: red;
     height: 5rem;
+    box-shadow: 1px 2px 15px rgba(0, 0, 0, .5);
 }
 
 .flex-basis {
@@ -19,11 +19,46 @@
     text-decoration: none;
     color:  var.$text-color;
     letter-spacing: 5px;
-
 }
 
 .menu-flex {
     display: flex;
-    align-items: center;
+    align-items: center;    
     gap: 1rem;
+}
+
+.search-button {
+    background-color: var.$input-color;
+    color: var.$text-color;
+    border: transparent;
+    font-size: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+    outline: none;
+    border-radius: 0 5px 5px 0;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1px;
+        height: 100%;
+        background-color: var.$text-color;
+    }
+}
+
+.search-input {
+    border-radius: 5px 0 0 5px;
+    width: 100%;
+    color: var.$text-color;
+    &::placeholder {
+        color: var.$text-color;
+    }
+}
+
+#search-form {
+    display: flex;
+    flex-basis: 100%;    
 }

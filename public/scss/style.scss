@@ -1,11 +1,6 @@
 @use './variables' as var;
 @use './components';
 
-/*
-----------------------------------
-RESET DEFAULT SETTINGS
-----------------------------------
-*/
 @font-face {
     font-family: Concrete;
     src: url('../font/concrete/ConcretepersonaluseRegular-DOzG0.otf');
@@ -20,6 +15,12 @@ RESET DEFAULT SETTINGS
     font-family: Roboto;
     src: url('../font/roboto/Roboto-Regular.ttf'), url('../font/roboto/Roboto-Light.ttf');
 }
+
+/*
+----------------------------------
+RESET DEFAULT SETTINGS
+----------------------------------
+*/
 * {
     padding: 0;
     margin: 0;
@@ -44,4 +45,17 @@ html, body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
+}
+
+/*
+----------------------------------
+GRID PARA O FEED
+----------------------------------
+*/
+
+.feed-grid {
+    display: grid;
+    grid-template-columns: [start] 230px [centre-start] 1fr [last-column-start] 270px [finish];
+    grid-template-rows: [row-start] 260px;
+    gap: 1rem;
 }
