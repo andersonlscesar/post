@@ -1,0 +1,29 @@
+@use '../../variables' as var;
+
+
+#header {    
+    display: flex;
+    height: rem;
+    background-color: red;
+    height: 5rem;
+}
+
+.flex-basis {
+    flex-basis: 100%;
+}
+
+.header__brand {
+    font-family: highup;
+    display: block;
+    font-size: var.$font-size-brand;
+    text-decoration: none;
+    color:  var.$text-color;
+    letter-spacing: 5px;
+
+}
+
+.menu-flex {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}

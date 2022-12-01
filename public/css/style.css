@@ -169,6 +169,32 @@
 LOGIN AND CAD FORM'S ANIMATIONS
 -------------------------------------------------------
 */
+#header {
+  display: flex;
+  height: rem;
+  background-color: red;
+  height: 5rem;
+}
+
+.flex-basis {
+  flex-basis: 100%;
+}
+
+.header__brand {
+  font-family: highup;
+  display: block;
+  font-size: 3.5rem;
+  text-decoration: none;
+  color: #C0CDFA;
+  letter-spacing: 5px;
+}
+
+.menu-flex {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 /*
 =========================================
 General components
@@ -184,6 +210,14 @@ These files concerning login's components
 RESET DEFAULT SETTINGS
 ----------------------------------
 */
+@font-face {
+  font-family: Concrete;
+  src: url("../font/concrete/ConcretepersonaluseRegular-DOzG0.otf");
+}
+@font-face {
+  font-family: highup;
+  src: url("../font/highup-italic-font/HighupItalicPersonalUseBoldItalic-vmqnM.ttf");
+}
 @font-face {
   font-family: Roboto;
   src: url("../font/roboto/Roboto-Regular.ttf"), url("../font/roboto/Roboto-Light.ttf");
@@ -201,6 +235,17 @@ html, body {
 
 #body-login {
   overflow-x: hidden;
+}
+
+#feed {
+  background-color: #12141C;
+  color: #C0CDFA;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
 /*# sourceMappingURL=style.css.map */

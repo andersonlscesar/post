@@ -1,4 +1,4 @@
-@use './variables';
+@use './variables' as var;
 @use './components';
 
 /*
@@ -6,6 +6,15 @@
 RESET DEFAULT SETTINGS
 ----------------------------------
 */
+@font-face {
+    font-family: Concrete;
+    src: url('../font/concrete/ConcretepersonaluseRegular-DOzG0.otf');
+}
+
+@font-face {
+    font-family: highup;
+    src: url('../font/highup-italic-font/HighupItalicPersonalUseBoldItalic-vmqnM.ttf');
+}
 
 @font-face {
     font-family: Roboto;
@@ -24,4 +33,15 @@ html, body {
 
 #body-login {
     overflow-x: hidden;
+}
+
+#feed {
+    background-color: var.$secondary-color;
+    color: var.$text-color;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
 }

@@ -4,5 +4,6 @@ use App\Controller\Pages;
 
 
 $route->get('/', [
-    fn() => new Response(200, Pages\Login::renderContent())
+    fn() => new Response(200, Pages\LoginController::renderContent())
 ]);
+
