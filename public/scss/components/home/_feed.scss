@@ -240,7 +240,7 @@ COMMENTS
 
     input {
         width: 100%;
-        @include comp.backgroundImageForInput('../img/gallery.png');
+        @include comp.backgroundImage('../img/gallery.png');
     }
 }
 
@@ -321,7 +321,16 @@ FORMULÁRIO QUE FAZ PARTE DO MODAL
 */
 
 .publish-input {
-    @include comp.backgroundImageForInput('../img/gallery.png');
+    // @include comp.backgroundImageForInput('../img/gallery.png');
     width: 100%;
     margin-bottom: .2rem;
+}
+
+#publish-image {
+    display: none;
+}
+
+label[for="publish-image"] {
+    @include comp.backgroundImage('../img/gallery.png');
+    @include comp.labelFile(true)
 }

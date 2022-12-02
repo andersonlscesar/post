@@ -35,11 +35,23 @@
     color: var.$text-color;
 }
 
-@mixin backgroundImageForInput($path, $bgSize: 20px, $positionX: 97%, $positionY: 50%) {
+@mixin backgroundImage($path, $bgSize: 20px, $positionX: 97%, $positionY: 50%) {
     background-image: url($path);
     background-repeat: no-repeat;
     background-size: $bgSize;
     background-position: $positionX $positionY;
+}
+
+@mixin labelFile($trans: false, $height: 20px, $width: 20px, $top: 50%, $left: 0%, $right: 2%, $bottom: 0%) {
+    height: $height;
+    width: $width;
+    position: absolute;
+    top: $top;
+    right: $right;   
+
+    @if $trans {
+        transform: translateY(-50%);
+    }
 }
 
 .cancel-button {
@@ -133,4 +145,8 @@
     font-size: .8rem;
     text-decoration: none;
     color: var.$links-color;
+}
+
+.form__parent {
+    position: relative;
 }

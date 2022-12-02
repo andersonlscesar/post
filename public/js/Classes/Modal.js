@@ -23,23 +23,40 @@ export class Modal {
         this.modalContainer = document.querySelector('.modal-container');
         this.configure();
     }
+    /**
+     * Função responsável por adicionar os eventos aos elementos
+     */
     configure() {
         this.itemThatOpenModal.addEventListener('click', this.open);
         this.itemThatCloseModal.addEventListener('click', this.close);
         this.modalContainer.addEventListener('click', this.outsideClick);
     }
+    /**
+     * Função responsável por mostrar o modal
+     */
     open() {
         this.modalContainer.classList.add('modal-container--active');
-        window.addEventListener('keyup', this.closeByESC);
+        window.addEventListener('keyup', this.closeByESC); // Ativando evento de keyboard no momento da abertura do modal
     }
+    /**
+     * Função responsável por ferchar o modal
+     */
     close() {
         this.modalContainer.classList.remove('modal-container--active');
-        window.removeEventListener('keyup', this.closeByESC);
+        window.removeEventListener('keyup', this.closeByESC); // Removendo da stack o evento no momento do fechamento do modal
     }
+    /**
+     * Função responsável por fechar o modal via tecla ESC
+     * @param e
+     */
     closeByESC(e) {
         if (e.code === 'Escape')
             this.modalContainer.classList.remove('modal-container--active');
     }
+    /**
+     * Função responsável por fechar o modal caso o click seja fora da área do contéudo do modal
+     * @param e
+     */
     outsideClick(e) {
         if (this.modalContainer === e.target)
             this.modalContainer.classList.remove('modal-container--active');
