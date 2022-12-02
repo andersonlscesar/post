@@ -141,6 +141,9 @@
 }
 
 .modal-container {
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
   position: fixed;
   top: 0;
   left: 0;
@@ -154,12 +157,23 @@
   padding: 1rem;
 }
 .modal-container .modal-container__content {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  transition-delay: 0.2s;
   background-color: #1E1F23;
   min-height: 60px;
   width: 600px;
   border-radius: 6px;
   padding: 1rem;
   box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
+}
+
+.modal-container--active {
+  opacity: 1;
+  pointer-events: all;
+}
+.modal-container--active .modal-container__content {
+  opacity: 1;
 }
 
 #background-video {
