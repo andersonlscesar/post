@@ -183,3 +183,134 @@ AREA DE POSTAGENS RECENTES
         line-height: 25px;
     }
 }
+
+.poster-area__body-photo {
+    width: 100%;
+    height: 378px;
+}
+
+/*
+====================================
+COMMENTS
+====================================
+*/
+.poster-area__comments-reactions {
+    display: flex;
+    gap: 1rem;
+}
+.like-reaction, .comment-reaction {
+    font-size: small;
+}
+
+.poster-area__comments-interactions {
+    padding: 2rem 0;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.like-interaction, .comment-interaction {
+    cursor: pointer;
+    display: flex;
+    gap: .2rem;
+    align-items: center;
+    span {
+        font-size: small;
+    }
+   i {
+    font-size: 1.4rem;
+   }
+}
+
+.comment {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    .comment__user-photo {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+}
+
+#form__comment {
+    width: 100%;
+
+    input {
+        width: 100%;
+        background-image: url('../img/gallery.png');
+        background-repeat: no-repeat;
+        background-size: 20px;
+        background-position: 97% 50%;
+    }
+}
+
+.title-comments {
+    font-weight: lighter;
+    margin-top: 1.5rem;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        height: 1px;
+        width: 80%;
+        background-color: var.$text-color;
+    }
+}
+
+.all-comments {
+    padding: 1rem;
+}
+
+.single-comment__user-photo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.single-comment {
+    display: grid;
+    grid-template-columns: 65px 1fr;  
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+    .single-comment__text {
+        background-color: var.$comment-area-color;
+        padding: 1rem;
+        border-radius: 5px;
+        position: relative;
+        flex-basis: 100%;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top:  10px;
+            left: -19px;
+            height: 0;
+            width: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid transparent;
+            border-right: 10px solid var.$comment-area-color;
+        }
+    }
+
+    .single-comment__text  p {
+        font-size: .8rem;
+    }
+}
+
+.single-comment__interaction {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    font-size: small;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: -10px;
+}

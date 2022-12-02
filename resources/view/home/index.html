@@ -13,7 +13,7 @@
 
     <div class="recente-publishes">
 
-        <!-- Form para realizar publicação -->    
+        <!-- Form para realizar publicação -->
         <div class="publish">
             <input type="text" class="form__input" placeholder="Pubique algo ...">
         </div>
@@ -22,7 +22,7 @@
         <h2 class="recente-publishes__title">Postagens recentes</h2>
         <!-- Postagens dos usuários -->
         <div class="poster-area">
-            
+
             <div class="poster-area__header">
                 <img src="{{URL}}/public/img/p.jpg" alt="" class="poster-area__header-photo">
                 <div class="poster-arear__header-user-information">
@@ -33,11 +33,105 @@
             </div>
 
             <div class="poster-area__body">
-                <p class="poster-area__body-text">Segundo o IBGE, historicamente é na faixa entre mais de 1 mês e menos de 1 ano que se concentra a maior parcela dos desempregados no país. No segundo trimestre de 2020, auge da crise provocada pela pandemia, os desempregados nesta faixa representavam 58,3% do total, proporção recorde de toda a série histórica da pesquisa.
-                    Já a menor parcela estava na fila há mais de 1 ano, mas há menos de 2 anos, seguida pelos que buscavam nova vaga há menos de 1 mês.
-                    Enquanto houve uma pequena queda de um trimestre para outro entre os que procuravam emprego há dois anos ou mais e de um ano a menos de dois anos, aumentou o percentual entre quem esperava por uma</p>
+                <p class="poster-area__body-text">Segundo o IBGE, historicamente é na faixa entre mais de 1 mês e menos
+                    de 1 ano que se concentra a maior parcela dos desempregados no país. No segundo trimestre de 2020,
+                    auge da crise provocada pela pandemia, os desempregados nesta faixa representavam 58,3% do total,
+                    proporção recorde de toda a série histórica da pesquisa.
+                    Já a menor parcela estava na fila há mais de 1 ano, mas há menos de 2 anos, seguida pelos que
+                    buscavam nova vaga há menos de 1 mês.
+                    Enquanto houve uma pequena queda de um trimestre para outro entre os que procuravam emprego há dois
+                    anos ou mais e de um ano a menos de dois anos, aumentou o percentual entre quem esperava por uma</p>
             </div>
+            <img src="{{URL}}/public/img/p.jpg" alt="foto da postagem" class="poster-area__body-photo">
+
+            <!-- àrea de comentarios referentes a postagem -->
+
+            <div class="poster-area__comments">
+
+                <!-- Dados da postagem -->
+
+                <div class="poster-area__comments-reactions">
+                    <span class="like-reaction">2.555 Gostaram</span>
+                    <span class="comment-reaction">7 Comentários</span>
+                </div>
+
+                <!-- Interações sobre a postagem -->
+
+                <div class="poster-area__comments-interactions">
+                    <span class="like-interaction"><i class="fa-regular fa-heart"></i> <span>Gostei</span></span>
+                    <span class="comment-interaction"><i class="fa-regular fa-comment"></i> <span>Comentar</span>
+                    </span>
+                </div>
+
+                <!-- Form para realizar comentário -->
+
+                <div class="comment">
+                    <img src="{{URL}}/public/img/p.jpg" alt="foto usuário" class="comment__user-photo">
+                    <form method="POST" id="form__comment">
+                        <input type="text" name="comment" class="form__input" placeholder="Adicionar comentário ...">
+                    </form>
+                </div>
+
+                <h4 class="title-comments">Comentários</h4>
+
+                <!-- Listagem de todos os comentários referentes a essa postagem -->
+
+                <div class="all-comments">
+                    <!-- Único comentário -->
+                    <div class="single-comment">
+                        <img src="{{URL}}/public/img/p.jpg" alt="Foto usuário" class="single-comment__user-photo">
+                        <div class="single-comment__text">
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur sunt illo ipsa culpa
+                                ex. Ea a explicabo veritatis eius vitae possimus totam dolorum, dignissimos laboriosam,
+                                exercitationem qui perferendis atque eum.
+                            </p>
+                        </div>
+                        <div class="single-comment__interaction">
+                            <span class="like"><i class="fa-regular fa-heart"></i> <span>Gostei</span></span>
+                            <span class="response"><i class="fa-regular fa-comment"></i> <span>Responder</span></span>
+                        </div>
+                    </div>
+
+                    <!-- Único comentário -->
+                    <div class="single-comment">
+                        <img src="{{URL}}/public/img/p.jpg" alt="Foto usuário" class="single-comment__user-photo">
+                        <div class="single-comment__text">
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur sunt illo ipsa culpa
+                                ex. Ea a explicabo veritatis eius vitae possimus totam dolorum, dignissimos laboriosam,
+                                exercitationem qui perferendis atque eum.
+                            </p>
+                        </div>
+                        <div class="single-comment__interaction">
+                            <span class="like"><i class="fa-regular fa-heart"></i> <span>Gostei</span></span>
+                            <span class="response"><i class="fa-regular fa-comment"></i> <span>Responder</span></span>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Único comentário -->
+                    <div class="single-comment">
+                        <img src="{{URL}}/public/img/p.jpg" alt="Foto usuário" class="single-comment__user-photo">
+                        <div class="single-comment__text">
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur sunt illo ipsa culpa
+                                ex. Ea a explicabo veritatis eius vitae possimus totam dolorum, dignissimos laboriosam,
+                                exercitationem qui perferendis atque eum.
+                            </p>
+                        </div>
+                        <div class="single-comment__interaction">
+                            <span class="like"><i class="fa-regular fa-heart"></i> <span>Gostei</span></span>
+                            <span class="response"><i class="fa-regular fa-comment"></i> <span>Responder</span></span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
+
     </div>
 
     <!-- ********************************************************************************************************************** -->
@@ -56,25 +150,31 @@
             <a href="#" class="articles__link">
                 <article class="breaking-news__article">
                     <h2 class="article__title">Article</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam omnis tempora veritatis enim possimus? Repellendus quam itaque aspernatur laborum odio. Sunt blanditiis vero amet tempore quo provident labore maxime id.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam omnis tempora veritatis enim
+                        possimus? Repellendus quam itaque aspernatur laborum odio. Sunt blanditiis vero amet tempore quo
+                        provident labore maxime id.</p>
                 </article>
             </a>
 
             <a href="#" class="articles__link">
                 <article class="breaking-news__article">
                     <h2 class="article__title">Article</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam omnis tempora veritatis enim possimus? Repellendus quam itaque aspernatur laborum odio. Sunt blanditiis vero amet tempore quo provident labore maxime id.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam omnis tempora veritatis enim
+                        possimus? Repellendus quam itaque aspernatur laborum odio. Sunt blanditiis vero amet tempore quo
+                        provident labore maxime id.</p>
                 </article>
             </a>
             <a href="#" class="articles__link">
                 <article class="breaking-news__article">
                     <h2 class="article__title">Article</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam omnis tempora veritatis enim possimus? Repellendus quam itaque aspernatur laborum odio. Sunt blanditiis vero amet tempore quo provident labore maxime id.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam omnis tempora veritatis enim
+                        possimus? Repellendus quam itaque aspernatur laborum odio. Sunt blanditiis vero amet tempore quo
+                        provident labore maxime id.</p>
                 </article>
             </a>
         </div>
 
 
-        
+
     </div>
 </main>
