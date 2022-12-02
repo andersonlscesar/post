@@ -55,7 +55,7 @@ GRID PARA O FEED
 
 .feed-grid {
     display: grid;
-    grid-template-columns: [start] 230px [centre-start] 1fr [last-column-start] 270px [finish];
+    grid-template-columns: [start] 230px [centre-start] minmax(500px, 685px) [last-column-start] 270px [finish];
     grid-template-rows: [row-start] 220px [centre-row-start] 220px [last-row-start] 220px [finish];
     gap: 1rem;
 }

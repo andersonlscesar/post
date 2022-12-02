@@ -25,6 +25,33 @@
     color: var.$text-color;
 }
 
+@mixin formButtonCancel($padding: .9rem, $border-radius: 8px) {
+    @include var.linear-gradient-red();
+    padding: $padding;
+    outline: none;
+    border: transparent;
+    border-radius: $border-radius;
+    cursor: pointer;
+    color: var.$text-color;
+}
+
+@mixin backgroundImageForInput($path, $bgSize: 20px, $positionX: 97%, $positionY: 50%) {
+    background-image: url($path);
+    background-repeat: no-repeat;
+    background-size: $bgSize;
+    background-position: $positionX $positionY;
+}
+
+.cancel-button {
+    @include formButtonCancel();
+}
+
+.form-group-btns {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
 .form-flex {
     display: flex;
     flex-direction: column;   

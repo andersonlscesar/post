@@ -14,3 +14,9 @@ $font-size-brand: 3.5rem;
 @mixin linear-gradient {
     background-image: linear-gradient(to right, #0A396C , #3689D2 50%, #478DC9);
 }
+
+@mixin linear-gradient-red {
+    background-image: linear-gradient(to right, #6C0A0A , #D23636 50%, #C94F47);
+}
+
+
