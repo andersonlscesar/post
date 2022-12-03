@@ -73,7 +73,6 @@ export class PreviewImage {
         if(e.type === 'progress') console.log('Carregando ...')
         if(e.type === 'load') this.viewer.src = <string> this.reader.result
     
-        // this.viewer.src = <string> this.reader.result   
         this.removeListeners()
     }
 

@@ -332,15 +332,15 @@ FORMULÁRIO QUE FAZ PARTE DO MODAL
 
 label[for="publish-image"] {
     @include comp.backgroundImage('../img/gallery.png');
-    @include comp.labelFile(false, 88%);
-    left: 10px;
+    @include comp.labelFile(false, 100%);
+    left: 0px;
     cursor: pointer;
 }
 
 .preview-image {
     display: block;
     width: 100%;
-    margin: 1rem 0;
+    margin: 1.5rem 0;
     border-radius: 5px;
 }
 
