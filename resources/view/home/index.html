@@ -181,12 +181,13 @@
     <!-- Modal -->
     <div class="modal-container">
         <div class="modal-container__content">
-            <form method="POST" enctype="multipart/form-data">
+            <form method="POST" enctype="multipart/form-data" id="form-publish">
                 <div class="form__parent">
-                    <input type="text" name="publish" class="form__input publish-input" placeholder="Escrever publicação ...">
+                    <textarea placeholder="Deixe seu argumento ..." name="publish" id="publish-textarea" cols="30" rows="10" style="width: 100%;" class="form__input"></textarea>
                     <label for="publish-image"></label>
                 </div>
                 <input type="file" name="publish_image" id="publish-image">
+                <img class="preview-image">
                 <div class="form-group-btns">
                     <button type="button" class="cancel-button">Cancelar</button>
                     <button type="submit" class="form__button">Publicar</button>

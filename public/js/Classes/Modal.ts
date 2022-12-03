@@ -10,7 +10,7 @@ function autobind(_: any, _2: string, descriptor: PropertyDescriptor) {
       }
     };
     return adjDescriptor;
-  }
+}
 
 export class Modal {
     private itemThatOpenModal: HTMLElement

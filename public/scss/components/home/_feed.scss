@@ -332,5 +332,22 @@ FORMULÁRIO QUE FAZ PARTE DO MODAL
 
 label[for="publish-image"] {
     @include comp.backgroundImage('../img/gallery.png');
-    @include comp.labelFile(true)
+    @include comp.labelFile(false, 88%);
+    left: 10px;
+    cursor: pointer;
+}
+
+.preview-image {
+    display: block;
+    width: 100%;
+    margin: 1rem 0;
+    border-radius: 5px;
+}
+
+#publish-textarea {
+    width: 100%;
+    font-family: Roboto;
+    color: var.$text-color!important;
+    resize: none;
+    padding: 2.2rem;
 }

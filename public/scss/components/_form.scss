@@ -42,7 +42,7 @@
     background-position: $positionX $positionY;
 }
 
-@mixin labelFile($trans: false, $height: 20px, $width: 20px, $top: 50%, $left: 0%, $right: 2%, $bottom: 0%) {
+@mixin labelFile($trans: false, $top: 50%, $height: 20px, $width: 20px, $left: 0%, $right: 2%, $bottom: 0%) {
     height: $height;
     width: $width;
     position: absolute;
