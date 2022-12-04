@@ -63,7 +63,6 @@ export class PreviewImage {
             console.log('Carregando ...');
         if (e.type === 'load')
             this.viewer.src = this.reader.result;
-        // this.viewer.src = <string> this.reader.result   
         this.removeListeners();
     }
     /**

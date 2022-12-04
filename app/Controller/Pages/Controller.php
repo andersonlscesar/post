@@ -32,12 +32,28 @@ class Controller
         return View::render('layout/feed', [
             'title'     => $title,
             'content'   => $content,
-            'menu'      => self::renderMenu()
+            'menu'      => self::renderMenu(),
+            'loading'   => self::getLoading()
         ]);
     }
+
+    /**
+     * Responsável por pegar o conteúdo do menu
+     * @return string
+     */
 
     private static function renderMenu(): string 
     {
         return View::render('layout/feed_menu');
+    }
+
+    /**
+     * Responsável por pegar o conteúdo do loading
+     * @return string
+     */
+
+    private static function getLoading(): string 
+    {
+        return View::render('layout/loading');
     }
 }

@@ -1,0 +1,58 @@
+@use '../variables' as var;
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var.$primary-color;
+    z-index: 24;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity .3s ease-in-out;
+
+
+    .loader__element {
+        height: 50px;
+        width: 50px;
+        background-color: var.$text-color;
+        border-radius: 50%;
+        animation-name: loading;
+        animation-duration: .6s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+        transition: transform .3s ease-in-out;
+
+    }
+
+
+    @keyframes loading {
+        0% {
+            transform: translateX(0%) scale(1);
+        }
+        50% {
+            transform: translateX(-110%) scale(.5);
+
+        }
+
+        100% {
+            transform: translateX(110%)  scale(.5);
+
+        }
+    }
+}
+
+.loader--remove {
+    pointer-events: none;
+    opacity: 0;
+    transition-delay: 1s;
+    
+
+    .loader__element {
+        animation-fill-mode: forwards;
+        pointer-events: none;
+    }
+}
