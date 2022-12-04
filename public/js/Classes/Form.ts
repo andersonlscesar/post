@@ -9,7 +9,7 @@ export class Form {
     options?: Options
     private inputElement!: HTMLInputElement
 
-    constructor(public form: HTMLFormElement, public location?:HTMLElement, options?: Options) {
+    constructor(public form?: HTMLFormElement, public location?:HTMLElement, options?: Options) {
         this.options = options
         this.location = location
         this.form = form
@@ -45,27 +45,28 @@ export class Form {
     
 
      getErrorMessage(message: string): void {
-         
-         if(!this.form.hasAttribute('data-alert')) {
-            let input = this.inputElement
-            this.form.setAttribute('data-alert', '')
-            this.message = message
-            const errorMessageDiv = document.createElement('div')
-            errorMessageDiv.classList.add('error-message')
-            const errorMessageInfo = document.createElement('span')
-            errorMessageInfo.classList.add('error-message__info')
-            errorMessageInfo.innerText = this.message
-            errorMessageDiv.appendChild( errorMessageInfo )
-            this.location?.appendChild( errorMessageDiv )     
-            input.style.boxShadow = '0px 0px 2px 2px #d25536'
-            //Remove o aviso após alguns segundos
-            const myInterval = setTimeout(() => {
-                errorMessageDiv.remove()
-                input.style.boxShadow = 'none'
-                this.form.removeAttribute('data-alert')
-              }, 6000)        
-               this.whereTyping(errorMessageDiv, myInterval) // Verifica quando o usuário estiver digitando                
-            }
+         if(this.form) {
+             if(!this.form.hasAttribute('data-alert')) {
+                let input = this.inputElement
+                this.form.setAttribute('data-alert', '')
+                this.message = message
+                const errorMessageDiv = document.createElement('div')
+                errorMessageDiv.classList.add('error-message')
+                const errorMessageInfo = document.createElement('span')
+                errorMessageInfo.classList.add('error-message__info')
+                errorMessageInfo.innerText = this.message
+                errorMessageDiv.appendChild( errorMessageInfo )
+                this.location?.appendChild( errorMessageDiv )     
+                input.style.boxShadow = '0px 0px 2px 2px #d25536'
+                //Remove o aviso após alguns segundos
+                const myInterval = setTimeout(() => {
+                    errorMessageDiv.remove()
+                    input.style.boxShadow = 'none'
+                    if(this.form) this.form.removeAttribute('data-alert')
+                  }, 6000)        
+                   this.whereTyping(errorMessageDiv, myInterval) // Verifica quando o usuário estiver digitando                
+                }
+         }
 
 
     }
@@ -91,13 +92,13 @@ export class Form {
      */
 
     private whereTyping(element: HTMLDivElement, myInterval: number) {
-        if(element) {
+        if(element && this.form) {
             this.form.addEventListener('keyup', (e) => {
                 clearInterval(myInterval)
                 let input = <HTMLInputElement> e.target
                 input.style.boxShadow = 'none'
                 element.remove()
-                this.form.removeAttribute('data-alert')
+                if(this.form) this.form.removeAttribute('data-alert')
             })
         }
     }
@@ -107,7 +108,7 @@ export class Form {
      * 
      */
     removeErrorMessage(): void {
-        if(document.querySelector('.error-message')) {
+        if(document.querySelector('.error-message') && this.form) {
             document.querySelector('.error-message')?.remove()
             for(let i = 0; i < this.form.children.length; i++) {
                 if(this.form.children[i].nodeName === 'INPUT') {

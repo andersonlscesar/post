@@ -68,7 +68,13 @@
                 <div class="comment">
                     <img src="{{URL}}/public/img/p.jpg" alt="foto usuário" class="comment__user-photo">
                     <form method="POST" id="form__comment">
-                        <input type="text" name="comment" class="form__input" placeholder="Adicionar comentário ...">
+                       <textarea name="comment"   cols="30" rows="1" class="form__input comment-input" placeholder="Adicione um comentário ..."></textarea>
+                       <div class="submit-area">
+                        <label for="comment-image"></label>
+                        <input type="file" name="comment_image" id="comment-image">
+                        <img class="preview-image">
+                        <button type="submit" class="form__button">Comentar</button>
+                       </div>
                     </form>
                 </div>
 

@@ -150,3 +150,11 @@
 .form__parent {
     position: relative;
 }
+
+.comment-input {
+    resize: none;
+    width: 100%;
+    font-family: Roboto;
+    transition: all .3s ease-in-out;
+}
+

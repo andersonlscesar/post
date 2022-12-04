@@ -71,4 +71,24 @@ export function cadValidateForm() {
         });
     }
 }
+export function commentValidateForm() {
+    const formComment = document.querySelector('#form__comment');
+    if (formComment) {
+        const location = document.querySelector('#feed');
+        const form = new Form(formComment, location);
+        const submitArea = document.querySelector('.submit-area');
+        // Trecho responśavel por exibir o btn de submit no form de comentário
+        formComment.comment.addEventListener('focusin', () => {
+            submitArea.style.height = `${submitArea.scrollHeight + 20}px`;
+            submitArea.style.opacity = '1';
+            formComment.comment.setAttribute('rows', '5');
+        }, { once: true });
+        formComment.addEventListener('submit', (e) => {
+            if (!form.isEmpty(formComment.comment)) {
+                e.preventDefault();
+                form.getErrorMessage('Digite um comentário');
+            }
+        });
+    }
+}
 //# sourceMappingURL=FormValidation.js.map

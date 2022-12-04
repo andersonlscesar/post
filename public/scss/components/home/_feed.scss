@@ -337,8 +337,17 @@ label[for="publish-image"] {
     cursor: pointer;
 }
 
+label[for="comment-image"] {
+    @include comp.backgroundImage('../img/gallery.png');
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+
+}
+
 .preview-image {
     display: block; 
+    min-height: 0;
     max-width: 100%;
     margin: 1.5rem auto;
     border-radius: 5px;
@@ -351,4 +360,19 @@ label[for="publish-image"] {
     color: var.$text-color!important;
     resize: none;
     padding: 2.2rem;
+}
+
+#comment-image {
+    display: none;
+}
+
+.submit-area {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 0;
+    overflow: hidden;
+    transition: all .3s ease-in-out;
+    opacity: 0;
 }
