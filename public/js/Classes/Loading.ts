@@ -18,6 +18,4 @@ export class Loading {
             }, 2500)
         }
     }
-
-
 }
