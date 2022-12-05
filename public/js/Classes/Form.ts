@@ -1,22 +1,16 @@
-interface Options {
-    borderColor?: string,
-    textColor?: string,
-    backgroundColor?: string
-}
+import { Modal } from "./Modal.js"
 
 export class Form {
-    private message!: string
-    options?: Options
+    private form: HTMLFormElement
     private inputElement!: HTMLInputElement
 
-    constructor(public form?: HTMLFormElement, public location?:HTMLElement, options?: Options) {
-        this.options = options
-        this.location = location
+    constructor(form: HTMLFormElement) {
         this.form = form
+        new Modal
     }
 
     /**
-     * Método responsavel por definir um input, caso seja preciso definir fora da classe
+     * Método responsavel por definir um input
      * @param { HTMLInputElement } input      * 
      */
 
@@ -36,39 +30,6 @@ export class Form {
             return false
         }
         return true
-    }
-
-    /**
-     * Cria através do DOM elementos HTML e os insere e depois de alguns segundos, os remove
-     * @param message  
-     */
-    
-
-     getErrorMessage(message: string): void {
-         if(this.form) {
-             if(!this.form.hasAttribute('data-alert')) {
-                let input = this.inputElement
-                this.form.setAttribute('data-alert', '')
-                this.message = message
-                const errorMessageDiv = document.createElement('div')
-                errorMessageDiv.classList.add('error-message')
-                const errorMessageInfo = document.createElement('span')
-                errorMessageInfo.classList.add('error-message__info')
-                errorMessageInfo.innerText = this.message
-                errorMessageDiv.appendChild( errorMessageInfo )
-                this.location?.appendChild( errorMessageDiv )     
-                input.style.boxShadow = '0px 0px 2px 2px #d25536'
-                //Remove o aviso após alguns segundos
-                const myInterval = setTimeout(() => {
-                    errorMessageDiv.remove()
-                    input.style.boxShadow = 'none'
-                    if(this.form) this.form.removeAttribute('data-alert')
-                  }, 6000)        
-                   this.whereTyping(errorMessageDiv, myInterval) // Verifica quando o usuário estiver digitando                
-                }
-         }
-
-
     }
 
     /**
@@ -103,22 +64,7 @@ export class Form {
         }
     }
 
-    /**
-     * Caso seja necessário remover uma mensagem no momento de validação em outro form
-     * 
-     */
-    removeErrorMessage(): void {
-        if(document.querySelector('.error-message') && this.form) {
-            document.querySelector('.error-message')?.remove()
-            for(let i = 0; i < this.form.children.length; i++) {
-                if(this.form.children[i].nodeName === 'INPUT') {
-                    let input = <HTMLElement> this.form.children[i]
-                    input.style.boxShadow = 'none'                  
-                }
-            }
-           
-        }
-    }
+
 
 
 

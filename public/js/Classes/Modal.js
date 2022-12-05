@@ -1,35 +1,32 @@
-// Decorator para realizar a mudança de contexto do this
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-function autobind(_, _2, descriptor) {
-    const originalMethod = descriptor.value;
-    const adjDescriptor = {
-        configurable: true,
-        get() {
-            const boundFn = originalMethod.bind(this);
-            return boundFn;
-        }
-    };
-    return adjDescriptor;
-}
+import autobind from "../Decorator/autobind.js";
 export class Modal {
-    constructor(open, close) {
+    /**
+     * Método responsável por definir os elementos do modal
+     * @param modal
+     * @param open
+     * @param close
+     */
+    setModal(modal, open, close) {
+        this.modalContainer = modal;
         this.itemThatOpenModal = open;
         this.itemThatCloseModal = close;
-        this.modalContainer = document.querySelector('.modal-container');
         this.configure();
     }
     /**
      * Função responsável por adicionar os eventos aos elementos
      */
     configure() {
-        this.itemThatOpenModal.addEventListener('click', this.open);
-        this.itemThatCloseModal.addEventListener('click', this.close);
-        this.modalContainer.addEventListener('click', this.outsideClick);
+        if (this.modalContainer) {
+            this.itemThatOpenModal.addEventListener('click', this.open);
+            this.itemThatCloseModal.addEventListener('click', this.close);
+            this.modalContainer.addEventListener('click', this.outsideClick);
+        }
     }
     /**
      * Função responsável por mostrar o modal
@@ -74,4 +71,3 @@ __decorate([
 __decorate([
     autobind
 ], Modal.prototype, "outsideClick", null);
-//# sourceMappingURL=Modal.js.map

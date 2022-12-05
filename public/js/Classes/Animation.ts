@@ -1,11 +1,11 @@
-export class AnimationForm {
+export class AnimationElement {
 
     element!: HTMLElement
 
     // -------------------------------------------------------
     // Joga o elemento para a esquerda
     // Objeto com as propridades do @keyframes
-    leftDirectionKeyframe: Keyframe[] = [
+    private leftDirectionKeyframe: Keyframe[] = [
         { transform: 'translateX(0%)', opacity: '1' },
         { transform: 'translateX(30%)', opacity: '.9' },
         { opacity: '.5' },
@@ -13,7 +13,7 @@ export class AnimationForm {
     ]
 
     // Opções de tempo e estilo da animação
-    options: object = {
+    private options: object = {
         duration: 300,
         easing: 'ease-in-out',
         fill: 'forwards',
@@ -21,13 +21,13 @@ export class AnimationForm {
     }
     // -------------------------------------------------------
     // Traz algum elemente que esteja na direita
-    fromRightDirectionKeyframe: Keyframe[] = [
+    private fromRightDirectionKeyframe: Keyframe[] = [
         { transform: 'translateX(200%)', opacity: '0' },
         { transform: 'translateX(-50%)', opacity: '.5' },
         { transform: 'translateX(0%)', opacity: '1'}
     ]
 
-    optionsForRightDirectionKeyframe: object = {
+    private optionsForRightDirectionKeyframe: object = {
         duration: 300,
         delay: 200,
         easing: 'ease-in-out',
@@ -36,7 +36,7 @@ export class AnimationForm {
 
     // -------------------------------------------------------
     // Manda o elemento de volta para a direita
-    fromRightDirectionKeyframeReverse: Keyframe[] = [
+    private fromRightDirectionKeyframeReverse: Keyframe[] = [
         { transform: 'translateX(0%)', opacity: '1'},
         { transform: 'translateX(-50%)', opacity: '.5' },
         { transform: 'translateX(200%)', opacity: '0' }
@@ -45,14 +45,14 @@ export class AnimationForm {
 
     // -------------------------------------------------------
     // Traz o elemento da esquerda
-    leftDirectionKeyframeReverse: Keyframe[] = [
+    private leftDirectionKeyframeReverse: Keyframe[] = [
         { transform: 'translateX(-100%)', opacity: '0' },
         { transform: 'translateX(30%)', opacity: '.5' },
         { opacity: '.9' },
         { transform: 'translateX(0%)', opacity: '1' }
     ]
 
-    optionsLeftReverse: object = {
+    private optionsLeftReverse: object = {
         duration: 300,
         easing: 'ease-in-out',
         fill: 'forwards',
@@ -65,30 +65,30 @@ export class AnimationForm {
      * @returns { AnimationForm }
      */
 
-    protected addElement(element: HTMLElement | null): AnimationForm {
+    protected addElement(element: HTMLElement | null): AnimationElement {
         if(element) {           
             this.element = element            
         }
         return this
     }
 
-     animateToLeftDirection() {
+    animateToLeftDirection() {
         this.element.animate(this.leftDirectionKeyframe, this.options)
         this.element.style.pointerEvents = 'none'
 
     }
 
-    animateFromRightDirection() {
+     animateFromRightDirection() {
         this.element.animate(this.fromRightDirectionKeyframe, this.optionsForRightDirectionKeyframe)
         this.element.style.pointerEvents = 'all'
     }
 
-    animateToRightDirection() {
+     animateToRightDirection() {
         this.element.animate(this.fromRightDirectionKeyframeReverse, this.optionsForRightDirectionKeyframe)
         this.element.style.pointerEvents = 'none'
     }
 
-    animateFromLeftDirection() {
+     animateFromLeftDirection() {
         this.element.animate(this.leftDirectionKeyframeReverse, this.optionsLeftReverse)
         this.element.style.pointerEvents = 'all'
     }

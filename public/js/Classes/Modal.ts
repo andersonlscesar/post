@@ -1,27 +1,22 @@
-// Decorator para realizar a mudança de contexto do this
-
-function autobind(_: any, _2: string, descriptor: PropertyDescriptor) {
-    const originalMethod = descriptor.value;
-    const adjDescriptor: PropertyDescriptor = {
-      configurable: true,
-      get() {
-        const boundFn = originalMethod.bind(this);
-        return boundFn;
-      }
-    };
-    return adjDescriptor;
-}
+import autobind from "../Decorator/autobind.js"
 
 export class Modal {
-    private itemThatOpenModal: HTMLElement
-    private itemThatCloseModal: HTMLElement
-    private modalContainer: HTMLDivElement
+    private itemThatOpenModal!: HTMLElement
+    private itemThatCloseModal!: HTMLElement
+    private modalContainer!: HTMLDivElement
 
-    constructor(open: HTMLElement, close: HTMLElement) {
-        this.itemThatOpenModal = open 
+    /**
+     * Método responsável por definir os elementos do modal
+     * @param modal 
+     * @param open 
+     * @param close 
+     */
+
+    setModal(modal: HTMLDivElement, open: HTMLElement, close: HTMLElement) {
+        this.modalContainer = modal 
+        this.itemThatOpenModal = open
         this.itemThatCloseModal = close
-        this.modalContainer = <HTMLDivElement> document.querySelector('.modal-container')
-        this.configure()
+        this.configure()       
     }
 
     /**
@@ -29,9 +24,11 @@ export class Modal {
      */
 
     private configure() {
-        this.itemThatOpenModal.addEventListener('click', this.open)
-        this.itemThatCloseModal.addEventListener('click', this.close)      
-        this.modalContainer.addEventListener('click', this.outsideClick)  
+        if(this.modalContainer) {
+            this.itemThatOpenModal.addEventListener('click', this.open)
+            this.itemThatCloseModal.addEventListener('click', this.close)      
+            this.modalContainer.addEventListener('click', this.outsideClick)  
+        }
     }
 
     /**
@@ -39,7 +36,7 @@ export class Modal {
      */
     
     @autobind
-    private open() {
+    private open() {     
         this.modalContainer.classList.add('modal-container--active')
         window.addEventListener('keyup', this.closeByESC) // Ativando evento de keyboard no momento da abertura do modal
     }
@@ -49,7 +46,7 @@ export class Modal {
      */
 
     @autobind
-    private close() {
+    private close() {       
         this.modalContainer.classList.remove('modal-container--active')
         window.removeEventListener('keyup', this.closeByESC) // Removendo da stack o evento no momento do fechamento do modal
     }
@@ -60,8 +57,8 @@ export class Modal {
      */
 
     @autobind
-    private closeByESC(e: { code: string; }) {
-       if(e.code === 'Escape') this.modalContainer.classList.remove('modal-container--active')
+    private closeByESC(e: { code: string; }) {    
+        if(e.code === 'Escape') this.modalContainer.classList.remove('modal-container--active')
     }
 
     /**
@@ -70,7 +67,7 @@ export class Modal {
      */
     
     @autobind
-    private outsideClick(e: { target: any; }) {      
-        if(this.modalContainer === e.target) this.modalContainer.classList.remove('modal-container--active')
+    private outsideClick(e: { target: any; }) {     
+       if(this.modalContainer === e.target) this.modalContainer.classList.remove('modal-container--active')        
     }
 }

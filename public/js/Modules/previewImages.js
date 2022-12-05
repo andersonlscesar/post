@@ -7,4 +7,3 @@ export function previewImage() {
         new PreviewImage(formElement, formElement.publish_image, viewer);
     }
 }
-//# sourceMappingURL=previewImages.js.map

@@ -1,4 +1,4 @@
-export class AnimationForm {
+export class AnimationElement {
     constructor() {
         // -------------------------------------------------------
         // Joga o elemento para a esquerda
@@ -79,4 +79,3 @@ export class AnimationForm {
         this.element.style.pointerEvents = 'all';
     }
 }
-//# sourceMappingURL=Animation.js.map
