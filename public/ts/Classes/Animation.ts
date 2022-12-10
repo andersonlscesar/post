@@ -5,6 +5,7 @@ export class AnimationElement {
     // -------------------------------------------------------
     // Joga o elemento para a esquerda
     // Objeto com as propridades do @keyframes
+
     private leftDirectionKeyframe: Keyframe[] = [
         { transform: 'translateX(0%)', opacity: '1' },
         { transform: 'translateX(30%)', opacity: '.9' },
@@ -13,6 +14,7 @@ export class AnimationElement {
     ]
 
     // Opções de tempo e estilo da animação
+
     private options: object = {
         duration: 300,
         easing: 'ease-in-out',
@@ -21,6 +23,7 @@ export class AnimationElement {
     }
     // -------------------------------------------------------
     // Traz algum elemente que esteja na direita
+
     private fromRightDirectionKeyframe: Keyframe[] = [
         { transform: 'translateX(200%)', opacity: '0' },
         { transform: 'translateX(-50%)', opacity: '.5' },
@@ -45,6 +48,7 @@ export class AnimationElement {
 
     // -------------------------------------------------------
     // Traz o elemento da esquerda
+    
     private leftDirectionKeyframeReverse: Keyframe[] = [
         { transform: 'translateX(-100%)', opacity: '0' },
         { transform: 'translateX(30%)', opacity: '.5' },
@@ -65,7 +69,7 @@ export class AnimationElement {
      * @returns { AnimationForm }
      */
 
-    protected addElement(element: HTMLElement | null): AnimationElement {
+    addElement(element: HTMLElement | null): AnimationElement {
         if(element) {           
             this.element = element            
         }

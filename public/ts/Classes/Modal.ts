@@ -1,6 +1,7 @@
 import autobind from "../Decorator/autobind.js"
 
 export class Modal {
+    
     private itemThatOpenModal!: HTMLElement
     private itemThatCloseModal!: HTMLElement
     private modalContainer!: HTMLDivElement
