@@ -1,7 +1,7 @@
-import { AnimationForm } from "./Animation.js"
+import { AnimationElement } from "./Animation.js"
 import { Form } from "./Form.js"
 
-export class FormSwitch extends AnimationForm {
+export class FormSwitch extends AnimationElement {
     initialElement: HTMLElement | null
     secondElement: HTMLElement | null
 
@@ -31,12 +31,6 @@ export class FormSwitch extends AnimationForm {
             this.initialElement.addEventListener('click', (e) => {
                 e.preventDefault()
                 // Selecionando os formulários para remover qualquer mensagem de erro que apareça no momento da animação
-                const login = <HTMLFormElement> document.querySelector('#login-form')!
-                const cad = <HTMLFormElement> document.querySelector('#cad-form')!
-
-                if(login.hasAttribute('data-alert')) { login.removeAttribute('data-alert'); new Form(login).removeErrorMessage() }
-                if(cad.hasAttribute('data-alert')) { cad.removeAttribute('data-alert'); new Form(cad).removeErrorMessage() }
-
                 this.addElement(loginForm).animateToLeftDirection()
                 this.addElement(cadForm).animateFromRightDirection()
             })
@@ -55,13 +49,6 @@ export class FormSwitch extends AnimationForm {
 
             this.secondElement.addEventListener('click', (e) => {
                 e.preventDefault()
-                // Selecionando os formulários para remover qualquer mensagem de erro que apareça no momento da animação
-                const login = <HTMLFormElement> document.querySelector('#login-form')!
-                const cad = <HTMLFormElement> document.querySelector('#cad-form')!
-
-                if(login.hasAttribute('data-alert')) { login.removeAttribute('data-alert'); new Form(login).removeErrorMessage() }
-                if(cad.hasAttribute('data-alert')) { cad.removeAttribute('data-alert'); new Form(cad).removeErrorMessage() }
-
                 this.addElement(cadForm).animateToRightDirection()
                 this.addElement(loginForm).animateFromLeftDirection()
                 
