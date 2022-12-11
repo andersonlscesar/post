@@ -19,25 +19,21 @@ export class FormInput {
      * @returns 
      */
 
-    addInput(input: HTMLInputElement): FormInput {
+    addInput(input: HTMLInputElement): Alert {
         this.input = input;
-        return this;
+        return this.alert;
     }    
     /**
      * Verifica se o input definido está vázio, caso sim, o evento submit será previnido
     */
    
-   isEmpty(): Alert {
-        this.formElement.getFormElement.addEventListener('submit', (e) => {
+   isEmpty(input: HTMLInputElement) {
+        let inputValue = input.value;
+        if(inputValue.trim() ===  '') {
+            return false;
+        }
 
-            if(this.input.value.trim() === '') {
-                e.preventDefault();
-                this.alert.getErrorMessage();
-            }
-
-        });
-        
-        return this.alert;        
+        return true;
     }
 
 

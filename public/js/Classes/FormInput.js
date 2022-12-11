@@ -10,19 +10,17 @@ export class FormInput {
      */
     addInput(input) {
         this.input = input;
-        return this;
+        return this.alert;
     }
     /**
      * Verifica se o input definido está vázio, caso sim, o evento submit será previnido
     */
-    isEmpty() {
-        this.formElement.getFormElement.addEventListener('submit', (e) => {
-            if (this.input.value.trim() === '') {
-                e.preventDefault();
-                this.alert.getErrorMessage();
-            }
-        });
-        return this.alert;
+    isEmpty(input) {
+        let inputValue = input.value;
+        if (inputValue.trim() === '') {
+            return false;
+        }
+        return true;
     }
 }
 //# sourceMappingURL=FormInput.js.map

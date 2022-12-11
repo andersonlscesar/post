@@ -11,7 +11,12 @@ export function loginForm() {
         let inputUsuario = loginForm.usuario;
         let inputPassword = loginForm.senha;
         let formInput = new FormInput(form, alertObject);
-        formInput.addInput(inputUsuario).isEmpty().setAlertMessage('Informe o usuário ou e-mail');
+        loginForm.addEventListener('submit', (e) => {
+            if (!formInput.isEmpty(inputUsuario)) {
+                e.preventDefault();
+                formInput.addInput(inputUsuario).setAlertMessage('Informe o usuário  ou e-mail').getErrorMessage();
+            }
+        });
     }
 }
 //# sourceMappingURL=validateForms.js.map
