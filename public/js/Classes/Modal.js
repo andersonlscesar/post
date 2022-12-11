@@ -71,3 +71,4 @@ __decorate([
 __decorate([
     autobind
 ], Modal.prototype, "outsideClick", null);
+//# sourceMappingURL=Modal.js.map

@@ -45,7 +45,7 @@ class Router
         }
         
         $patternRoute = '/^'.str_replace('/', '\/', $route).'$/';
-        $this->routes[$patternRoute][$method] = $params;
+        return $this->routes[$patternRoute][$method] = $params;
     }
 
     /**

@@ -79,3 +79,4 @@ export class AnimationElement {
         this.element.style.pointerEvents = 'all';
     }
 }
+//# sourceMappingURL=Animation.js.map

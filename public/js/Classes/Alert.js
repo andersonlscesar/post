@@ -1,7 +1,6 @@
 export class Alert {
-    constructor(form, location) {
+    constructor(location) {
         this.alertMessage = '';
-        this.form = form;
         this.location = location;
     }
     /**
@@ -13,4 +12,8 @@ export class Alert {
         this.alertMessage = message;
         return this;
     }
+    getErrorMessage() {
+        console.log(this.alertMessage);
+    }
 }
+//# sourceMappingURL=Alert.js.map

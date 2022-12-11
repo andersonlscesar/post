@@ -3,11 +3,9 @@ import { Form } from "./Form.js";
 export class Alert {
 
     private location:       HTMLElement;
-    private form:           Form;
     private alertMessage:   string = '';
     
-    constructor(form: Form, location: HTMLElement) {
-        this.form = form;
+    constructor(location: HTMLElement) {
         this.location = location;
     }
 
@@ -21,4 +19,10 @@ export class Alert {
         this.alertMessage = message;
         return this;
     }
+
+    getErrorMessage() {
+        console.log(this.alertMessage);
+    }
+
+    
 }
