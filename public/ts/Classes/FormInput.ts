@@ -7,11 +7,14 @@ export class FormInput {
     private formElement: Form;
     private alert: Alert;
 
-    constructor(formElement: Form, alert: Alert) {
+    constructor(formElement: Form) {
         this.formElement = formElement;
-        this.alert       = alert;
+        this.alert       = new Alert;
     }
 
+    get getAlert(): Alert {
+        return this.alert;
+    }
 
     /**
      * Define o input a ser verificado

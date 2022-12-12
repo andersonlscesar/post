@@ -1,7 +1,6 @@
 export class Alert {
-    constructor(location) {
+    constructor() {
         this.alertMessage = '';
-        this.location = location;
     }
     /**
      * Define a mensagem para o Alert
@@ -12,8 +11,12 @@ export class Alert {
         this.alertMessage = message;
         return this;
     }
-    getErrorMessage() {
-        console.log(this.alertMessage);
+    getErrorMessage(element) {
+        let divErrorMessage = document.createElement('div');
+        divErrorMessage.classList.add('error-message');
+        divErrorMessage.textContent = this.alertMessage;
+        element.style.boxShadow = '0px 0px 5px #d25536';
+        // this.getLocation.appendChild( divErrorMessage );
     }
 }
 //# sourceMappingURL=Alert.js.map

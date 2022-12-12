@@ -1,7 +1,11 @@
+import { Alert } from "./Alert.js";
 export class FormInput {
-    constructor(formElement, alert) {
+    constructor(formElement) {
         this.formElement = formElement;
-        this.alert = alert;
+        this.alert = new Alert;
+    }
+    get getAlert() {
+        return this.alert;
     }
     /**
      * Define o input a ser verificado

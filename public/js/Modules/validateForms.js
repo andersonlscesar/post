@@ -7,14 +7,14 @@ export function loginForm() {
     if (loginForm) {
         let loginSection = document.querySelector('#login-cad-section');
         let form = new Form(loginForm);
-        let alertObject = new Alert(loginSection);
+        let alertObject = new Alert;
         let inputUsuario = loginForm.usuario;
         let inputPassword = loginForm.senha;
-        let formInput = new FormInput(form, alertObject);
+        let formInput = new FormInput(form);
         loginForm.addEventListener('submit', (e) => {
             if (!formInput.isEmpty(inputUsuario)) {
                 e.preventDefault();
-                formInput.addInput(inputUsuario).setAlertMessage('Informe o usuário  ou e-mail').getErrorMessage();
+                formInput.getAlert.setAlertMessage('Informe o usuário ou e-mail').getErrorMessage(inputUsuario);
             }
         });
     }
