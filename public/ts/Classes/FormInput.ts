@@ -9,7 +9,8 @@ export class FormInput {
 
     constructor(formElement: Form) {
         this.formElement = formElement;
-        this.alert       = new Alert;
+        this.alert       = new Alert();
+        
     }
 
     get getAlert(): Alert {
@@ -38,6 +39,8 @@ export class FormInput {
 
         return true;
     }
+
+    
 
 
 

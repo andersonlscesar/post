@@ -2,7 +2,7 @@ import { Alert } from "./Alert.js";
 export class FormInput {
     constructor(formElement) {
         this.formElement = formElement;
-        this.alert = new Alert;
+        this.alert = new Alert();
     }
     get getAlert() {
         return this.alert;

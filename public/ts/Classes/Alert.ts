@@ -1,8 +1,9 @@
 export class Alert {
 
-    private location!:       HTMLElement;
-    private alertMessage:   string = '';
-
+    private location:           any;
+    private alertMessage:       string = '';
+    private containerMessage!: HTMLDivElement;
+    private inputElement!: HTMLInputElement | HTMLTextAreaElement;
 
 
 
@@ -18,12 +19,33 @@ export class Alert {
         return this;
     }
 
-    getErrorMessage(element: HTMLInputElement | HTMLTextAreaElement) {
-        let divErrorMessage = document.createElement('div');
-        divErrorMessage.classList.add('error-message');
-        divErrorMessage.textContent = this.alertMessage;
+    getError(element: HTMLInputElement | HTMLTextAreaElement): Alert {
+        this.inputElement = element;
+        this.containerMessage = document.createElement('div');
+        this.containerMessage.classList.add('error-message');
+        this.containerMessage.textContent = this.alertMessage;
         element.style.boxShadow = '0px 0px 5px #d25536';
-        // this.getLocation.appendChild( divErrorMessage );
+        return this;
+    }
+
+    addLocation(location: HTMLElement) {
+        this.location = location;
+        
+        if( !this.inputElement.form?.hasAttribute('form-submit') ) this.location.appendChild( this.containerMessage );                
+        this.inputElement.form?.setAttribute('form-submit', ''); // Definindo o atributo "form-submit"      
+        this.inputElement.form?.querySelector('button[type="submit"]')?.setAttribute('disabled', '');
+        console.log()
+        this.removeAlert();
+    }
+
+    private removeAlert() {
+        setTimeout(() => {
+            this.containerMessage.remove();
+            this.inputElement.style.boxShadow = 'none';
+            this.inputElement.form?.removeAttribute('form-submit');
+        this.inputElement.form?.querySelector('button[type="submit"]')?.removeAttribute('disabled');
+
+        }, 3000);
     }
 
     
