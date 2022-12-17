@@ -10,11 +10,14 @@ export class FormInput {
     constructor(formElement: Form) {
         this.formElement = formElement;
         this.alert       = new Alert();
+        this.typing();
+        
         
     }
 
     get getAlert(): Alert {
         return this.alert;
+
     }
 
     /**
@@ -40,7 +43,14 @@ export class FormInput {
         return true;
     }
 
-    
+    typing() {
+        let form =  this.formElement;
+        form.getFormElement.addEventListener('input', (e) => {
+            this.alert.removeAsSoonAsPossible();
+        } );
+    }
+
+
 
 
 

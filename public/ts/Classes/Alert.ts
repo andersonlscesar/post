@@ -4,6 +4,7 @@ export class Alert {
     private alertMessage:       string = '';
     private containerMessage!: HTMLDivElement;
     private inputElement!: HTMLInputElement | HTMLTextAreaElement;
+    private timeOut!: number;
 
 
 
@@ -32,20 +33,26 @@ export class Alert {
         this.location = location;
         
         if( !this.inputElement.form?.hasAttribute('form-submit') ) this.location.appendChild( this.containerMessage );                
-        this.inputElement.form?.setAttribute('form-submit', ''); // Definindo o atributo "form-submit"      
-        this.inputElement.form?.querySelector('button[type="submit"]')?.setAttribute('disabled', '');
-        console.log()
+        this.inputElement.form?.querySelector('button[type="submit"]')?.setAttribute('disabled', '');        
         this.removeAlert();
     }
 
     private removeAlert() {
-        setTimeout(() => {
+       this.timeOut = setTimeout(() => {
             this.containerMessage.remove();
             this.inputElement.style.boxShadow = 'none';
-            this.inputElement.form?.removeAttribute('form-submit');
-        this.inputElement.form?.querySelector('button[type="submit"]')?.removeAttribute('disabled');
+            this.inputElement.form?.querySelector('button[type="submit"]')?.removeAttribute('disabled');
 
         }, 3000);
+    }
+
+    removeAsSoonAsPossible() {
+        if(this.timeOut) {
+            clearTimeout(this.timeOut);
+            this.containerMessage.remove();
+            this.inputElement.style.boxShadow = 'none';
+            this.inputElement.form?.querySelector('button[type="submit"]')?.removeAttribute('disabled');
+        }
     }
 
     

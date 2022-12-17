@@ -20,23 +20,29 @@ export class Alert {
         return this;
     }
     addLocation(location) {
-        var _a, _b, _c, _d;
+        var _a, _b, _c;
         this.location = location;
         if (!((_a = this.inputElement.form) === null || _a === void 0 ? void 0 : _a.hasAttribute('form-submit')))
             this.location.appendChild(this.containerMessage);
-        (_b = this.inputElement.form) === null || _b === void 0 ? void 0 : _b.setAttribute('form-submit', ''); // Definindo o atributo "form-submit"      
-        (_d = (_c = this.inputElement.form) === null || _c === void 0 ? void 0 : _c.querySelector('button[type="submit"]')) === null || _d === void 0 ? void 0 : _d.setAttribute('disabled', '');
-        console.log();
+        (_c = (_b = this.inputElement.form) === null || _b === void 0 ? void 0 : _b.querySelector('button[type="submit"]')) === null || _c === void 0 ? void 0 : _c.setAttribute('disabled', '');
         this.removeAlert();
     }
     removeAlert() {
-        setTimeout(() => {
-            var _a, _b, _c;
+        this.timeOut = setTimeout(() => {
+            var _a, _b;
             this.containerMessage.remove();
             this.inputElement.style.boxShadow = 'none';
-            (_a = this.inputElement.form) === null || _a === void 0 ? void 0 : _a.removeAttribute('form-submit');
-            (_c = (_b = this.inputElement.form) === null || _b === void 0 ? void 0 : _b.querySelector('button[type="submit"]')) === null || _c === void 0 ? void 0 : _c.removeAttribute('disabled');
+            (_b = (_a = this.inputElement.form) === null || _a === void 0 ? void 0 : _a.querySelector('button[type="submit"]')) === null || _b === void 0 ? void 0 : _b.removeAttribute('disabled');
         }, 3000);
+    }
+    removeAsSoonAsPossible() {
+        var _a, _b;
+        if (this.timeOut) {
+            clearTimeout(this.timeOut);
+            this.containerMessage.remove();
+            this.inputElement.style.boxShadow = 'none';
+            (_b = (_a = this.inputElement.form) === null || _a === void 0 ? void 0 : _a.querySelector('button[type="submit"]')) === null || _b === void 0 ? void 0 : _b.removeAttribute('disabled');
+        }
     }
 }
 //# sourceMappingURL=Alert.js.map

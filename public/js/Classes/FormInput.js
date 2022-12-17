@@ -3,6 +3,7 @@ export class FormInput {
     constructor(formElement) {
         this.formElement = formElement;
         this.alert = new Alert();
+        this.typing();
     }
     get getAlert() {
         return this.alert;
@@ -25,6 +26,12 @@ export class FormInput {
             return false;
         }
         return true;
+    }
+    typing() {
+        let form = this.formElement;
+        form.getFormElement.addEventListener('input', (e) => {
+            this.alert.removeAsSoonAsPossible();
+        });
     }
 }
 //# sourceMappingURL=FormInput.js.map

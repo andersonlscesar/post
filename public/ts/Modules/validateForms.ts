@@ -19,6 +19,9 @@ export function loginForm() {
             if(!formInput.isEmpty(inputUsuario)) {
                 e.preventDefault();
                 formInput.getAlert.setAlertMessage('Informe o usuário ou e-mail').getError(inputUsuario).addLocation(loginSection);
+            } else if(!formInput.isEmpty(inputPassword)) {
+                e.preventDefault();
+                formInput.getAlert.setAlertMessage('Informe a senha').getError(inputPassword).addLocation(loginSection);
             }
         });
 
