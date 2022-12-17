@@ -1,3 +1,7 @@
+
+
+
+
 export class AnimationElement {
 
     element!: HTMLElement
@@ -76,10 +80,10 @@ export class AnimationElement {
         return this
     }
 
+  
     animateToLeftDirection() {
         this.element.animate(this.leftDirectionKeyframe, this.options)
         this.element.style.pointerEvents = 'none'
-
     }
 
      animateFromRightDirection() {

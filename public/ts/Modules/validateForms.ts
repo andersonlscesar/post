@@ -1,6 +1,5 @@
 import { Form } from "../Classes/Form.js";
 import { FormInput } from "../Classes/FormInput.js";
-import { Alert } from "../Classes/Alert.js";
 
 export function loginForm() {
 
@@ -24,6 +23,23 @@ export function loginForm() {
                 formInput.getAlert.setAlertMessage('Informe a senha').getError(inputPassword).addLocation(loginSection);
             }
         });
+
+    }
+}
+
+
+
+export function cadForm() {
+    let cadForm = <HTMLFormElement> document.querySelector('#cad-form');
+
+    if(cadForm) {
+        let loginSection    = <HTMLElement> document.querySelector('#login-cad-section');
+        let form            = new Form(cadForm);
+        let inputName       = cadForm.nome;
+        let inputUserName   = cadForm.usuario;
+        let inputEmail      = cadForm.email;
+        let inputPassword   = cadForm.senha;
+        let inputPasswordConfirm = cadForm.confirmar_senha;
 
     }
 }

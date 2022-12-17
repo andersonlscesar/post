@@ -1,3 +1,6 @@
-import { loginForm } from "./Modules/validateForms.js";
+import { loginForm, cadForm } from "./Modules/validateForms.js";
+import { switchForm } from "./Modules/switchForm.js";
 
-loginForm()
+loginForm();
+cadForm();
+switchForm();

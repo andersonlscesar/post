@@ -1,4 +1,5 @@
 export class Form {
+   [x: string]: any;
 
    private formElement: HTMLFormElement;
 

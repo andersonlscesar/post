@@ -21,4 +21,16 @@ export function loginForm() {
         });
     }
 }
+export function cadForm() {
+    let cadForm = document.querySelector('#cad-form');
+    if (cadForm) {
+        let loginSection = document.querySelector('#login-cad-section');
+        let form = new Form(cadForm);
+        let inputName = cadForm.nome;
+        let inputUserName = cadForm.usuario;
+        let inputEmail = cadForm.email;
+        let inputPassword = cadForm.senha;
+        let inputPasswordConfirm = cadForm.confirmar_senha;
+    }
+}
 //# sourceMappingURL=validateForms.js.map
