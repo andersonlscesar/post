@@ -40,6 +40,31 @@ export function cadForm() {
         let inputEmail      = cadForm.email;
         let inputPassword   = cadForm.senha;
         let inputPasswordConfirm = cadForm.confirmar_senha;
+        let formInput = new FormInput(form);
+
+
+        cadForm.addEventListener('submit', (e) => {
+            if(!formInput.isEmpty(inputName)) {
+                e.preventDefault();
+                formInput.getAlert.setAlertMessage('Informe um nome').getError(inputName).addLocation(loginSection);                
+            } else if(!formInput.isEmpty(inputUserName)) {
+                e.preventDefault();
+                formInput.getAlert.setAlertMessage('Informe um nome de usuário').getError(inputUserName).addLocation(loginSection);
+            } else if(!formInput.isEmpty(inputEmail)) {
+                e.preventDefault();
+                formInput.getAlert.setAlertMessage('Informe um e-mail').getError(inputEmail).addLocation(loginSection);
+            } else if(!formInput.isEmpty(inputPassword)) {
+                e.preventDefault();
+                formInput.getAlert.setAlertMessage('Informe a senha').getError(inputPassword).addLocation(loginSection);
+            } else if(!formInput.isEmpty(inputPasswordConfirm)) {
+                e.preventDefault();
+                formInput.getAlert.setAlertMessage('confirme sua senha').getError(inputPasswordConfirm).addLocation(loginSection);
+            } else if(inputPassword.value !== inputPasswordConfirm.value) {
+                e.preventDefault();
+                formInput.getAlert.setAlertMessage('As senhas não coincidem').getError(inputPasswordConfirm).addLocation(loginSection);
+                
+            }
+        });
 
     }
 }
