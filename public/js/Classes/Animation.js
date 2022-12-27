@@ -65,6 +65,7 @@ export class AnimationElement {
     animateToLeftDirection() {
         this.element.animate(this.leftDirectionKeyframe, this.options);
         this.element.style.pointerEvents = 'none';
+        console.log(this.element);
     }
     animateFromRightDirection() {
         this.element.animate(this.fromRightDirectionKeyframe, this.optionsForRightDirectionKeyframe);

@@ -1,3 +1,4 @@
+import { Alert } from "../Classes/Alert.js";
 import { AnimationElement } from "../Classes/Animation.js";
 
 export function switchForm() {
@@ -15,6 +16,7 @@ export function switchForm() {
             animation.addElement(loginFormSection).animateToLeftDirection();
             animation.addElement(cadFormSection).animateFromRightDirection();
         });
+  
 
 
         loginLink.addEventListener('click', (e) => {

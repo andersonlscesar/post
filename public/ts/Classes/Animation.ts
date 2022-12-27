@@ -4,7 +4,7 @@
 
 export class AnimationElement {
 
-    element!: HTMLElement
+    element!: HTMLElement;
 
     // -------------------------------------------------------
     // Joga o elemento para a esquerda
@@ -75,30 +75,31 @@ export class AnimationElement {
 
     addElement(element: HTMLElement | null): AnimationElement {
         if(element) {           
-            this.element = element            
+            this.element = element   ;         
         }
-        return this
+        return this;
     }
 
   
     animateToLeftDirection() {
-        this.element.animate(this.leftDirectionKeyframe, this.options)
-        this.element.style.pointerEvents = 'none'
+        this.element.animate(this.leftDirectionKeyframe, this.options);
+        this.element.style.pointerEvents = 'none';
+        console.log(this.element)   
     }
 
      animateFromRightDirection() {
-        this.element.animate(this.fromRightDirectionKeyframe, this.optionsForRightDirectionKeyframe)
-        this.element.style.pointerEvents = 'all'
+        this.element.animate(this.fromRightDirectionKeyframe, this.optionsForRightDirectionKeyframe);
+        this.element.style.pointerEvents = 'all';
     }
 
      animateToRightDirection() {
-        this.element.animate(this.fromRightDirectionKeyframeReverse, this.optionsForRightDirectionKeyframe)
-        this.element.style.pointerEvents = 'none'
+        this.element.animate(this.fromRightDirectionKeyframeReverse, this.optionsForRightDirectionKeyframe);
+        this.element.style.pointerEvents = 'none';
     }
 
      animateFromLeftDirection() {
-        this.element.animate(this.leftDirectionKeyframeReverse, this.optionsLeftReverse)
-        this.element.style.pointerEvents = 'all'
+        this.element.animate(this.leftDirectionKeyframeReverse, this.optionsLeftReverse);
+        this.element.style.pointerEvents = 'all';
     }
 
 }
