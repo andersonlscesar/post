@@ -10,11 +10,17 @@ export function switchForm() {
             e.preventDefault();
             animation.addElement(loginFormSection).animateToLeftDirection();
             animation.addElement(cadFormSection).animateFromRightDirection();
+            let alert = document.querySelector('.alert-message');
+            if (alert)
+                alert.remove();
         });
         loginLink.addEventListener('click', (e) => {
             e.preventDefault();
             animation.addElement(cadFormSection).animateToRightDirection();
             animation.addElement(loginFormSection).animateFromLeftDirection();
+            let alert = document.querySelector('.alert-message');
+            if (alert)
+                alert.remove();
         });
     }
 }

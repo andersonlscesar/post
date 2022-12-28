@@ -5,17 +5,7 @@ export class Alert {
     private containerMessage!: HTMLDivElement;
     private inputElement!: HTMLInputElement | HTMLTextAreaElement;
     private timeOut!: number;
-
-
-
-    set setTimeout(time: number) {
-        this.timeOut = time;
-    }
-
-    get getTimeout(): number {
-        return this.timeOut;
-    }
-
+    
     /**
      * Define a mensagem para o Alert
      * @param message 
@@ -45,15 +35,12 @@ export class Alert {
     }
     
     private removeAlert() {
-        let time = setTimeout(() => {
+        setTimeout(() => {
             this.containerMessage.remove();
             this.inputElement.style.boxShadow = 'none';
             this.inputElement.form?.querySelector('button[type="submit"]')?.removeAttribute('disabled');
             
-        }, 3000);     
-        
-        this.setTimeout = time;
-        
+        }, 3000);       
     }
 
     removeAsSoonAsPossible() {
@@ -63,11 +50,5 @@ export class Alert {
             this.inputElement.style.boxShadow = 'none';
             this.inputElement.form?.querySelector('button[type="submit"]')?.removeAttribute('disabled');
         }
-    }
-
-
-
-
-
-    
+    }    
 }

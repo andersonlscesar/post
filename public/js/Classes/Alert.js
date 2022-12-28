@@ -2,12 +2,6 @@ export class Alert {
     constructor() {
         this.alertMessage = '';
     }
-    set setTimeout(time) {
-        this.timeOut = time;
-    }
-    get getTimeout() {
-        return this.timeOut;
-    }
     /**
      * Define a mensagem para o Alert
      * @param message
@@ -34,13 +28,12 @@ export class Alert {
         this.removeAlert();
     }
     removeAlert() {
-        let time = setTimeout(() => {
+        setTimeout(() => {
             var _a, _b;
             this.containerMessage.remove();
             this.inputElement.style.boxShadow = 'none';
             (_b = (_a = this.inputElement.form) === null || _a === void 0 ? void 0 : _a.querySelector('button[type="submit"]')) === null || _b === void 0 ? void 0 : _b.removeAttribute('disabled');
         }, 3000);
-        this.setTimeout = time;
     }
     removeAsSoonAsPossible() {
         var _a, _b;
