@@ -28,7 +28,7 @@ export class Alert {
         this.removeAlert();
     }
     removeAlert() {
-        setTimeout(() => {
+        this.timeOut = setTimeout(() => {
             var _a, _b;
             this.containerMessage.remove();
             this.inputElement.style.boxShadow = 'none';

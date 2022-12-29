@@ -35,7 +35,7 @@ export class Alert {
     }
     
     private removeAlert() {
-        setTimeout(() => {
+        this.timeOut = setTimeout(() => {
             this.containerMessage.remove();
             this.inputElement.style.boxShadow = 'none';
             this.inputElement.form?.querySelector('button[type="submit"]')?.removeAttribute('disabled');
@@ -43,7 +43,7 @@ export class Alert {
         }, 3000);       
     }
 
-    removeAsSoonAsPossible() {
+    removeAsSoonAsPossible() {       
         if(this.timeOut) {
             clearTimeout(this.timeOut);
             this.containerMessage.remove();
