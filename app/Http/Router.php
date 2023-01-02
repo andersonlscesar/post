@@ -145,8 +145,9 @@ class Router
     public function whereNumber(string $param): void 
     {
         $route = $this->getRoute()['variables'];
-        if(!preg_match('/^[0-9]*$/', $route[$param])) die('Parâmetro inválido');
-        if(!isset( $route[$param])) die('Parâmetro indefinido');
+        if(isset($route[$param])) {
+            if(!preg_match('/^[0-9]*$/', $route[$param])) die('Parâmetro inválido');
+        }
      
     }
 
