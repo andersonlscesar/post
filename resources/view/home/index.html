@@ -20,7 +20,9 @@
         <!-- ************************************************************************** -->
 
         <h2 class="recente-publishes__title">Postagens recentes</h2>
+
         <!-- Postagens dos usuários -->
+
         <div class="poster-area">
 
             <div class="poster-area__header">
@@ -42,6 +44,7 @@
                     Enquanto houve uma pequena queda de um trimestre para outro entre os que procuravam emprego há dois
                     anos ou mais e de um ano a menos de dois anos, aumentou o percentual entre quem esperava por uma</p>
             </div>
+
             <img src="{{URL}}/public/img/p.jpg" alt="foto da postagem" class="poster-area__body-photo">
 
             <!-- àrea de comentarios referentes a postagem -->
@@ -68,12 +71,12 @@
                 <div class="comment">
                     <img src="{{URL}}/public/img/p.jpg" alt="foto usuário" class="comment__user-photo">
                     <form method="POST" id="form__comment">
-                       <textarea name="comment"   cols="30" rows="1" class="form__input comment-input" placeholder="Adicione um comentário ..."></textarea>
+                       <textarea name="comment"   cols="30" rows="4" class="form__input comment-input" placeholder="Adicione um comentário ..."></textarea>
                        <div class="submit-area">
-                        <label for="comment-image"></label>
-                        <input type="file" name="comment_image" id="comment-image">
-                        <img class="preview-image">
-                        <button type="submit" class="form__button">Comentar</button>
+                            <label for="comment-image"></label>
+                            <input type="file" name="comment_image" id="comment-image">
+                            <img class="preview-image">
+                            <button type="submit" class="form__button">Comentar</button>
                        </div>
                     </form>
                 </div>
@@ -97,6 +100,18 @@
                             <span class="like"><i class="fa-regular fa-heart"></i> <span>Gostei</span></span>
                             <span class="response"><i class="fa-regular fa-comment"></i> <span>Responder</span></span>
                         </div>
+                        
+                        <!-- Respostas relacionadas -->
+                        
+                        <div class="answers">
+
+                            <!-- Formulário para enviar resposta ao comentário -->
+
+                            <form class="form-answer" method="POST">
+                                
+                            </form>
+
+                        </div>
                     </div>
 
                     <!-- Único comentário -->
@@ -113,6 +128,7 @@
                             <span class="like"><i class="fa-regular fa-heart"></i> <span>Gostei</span></span>
                             <span class="response"><i class="fa-regular fa-comment"></i> <span>Responder</span></span>
                         </div>
+
                     </div>
 
 
