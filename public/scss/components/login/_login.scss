@@ -46,6 +46,15 @@
 }
 
 
+.form__radios {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    .radios__label {
+        font-size: var.$font-size-medium;
+    }
+}
+
 /*
 -------------------------------------------------------
 LOGIN AND CAD FORM'S ANIMATIONS
